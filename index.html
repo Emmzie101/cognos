@@ -1,0 +1,2815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COGNOS — 30-Day Cognitive Expansion Protocol</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   COGNOS — CANVA × GOOGLE DESIGN SYSTEM v3
+   Palette: White · Intelligence Blue · Teal · Green · Yellow
+   Full Glassmorphism + Gradients + Glow + Animation
+   ============================================= */
+:root {
+  --blue:    #1A56DB;
+  --blue2:   #2563EB;
+  --blue3:   #60A5FA;
+  --blue4:   #DBEAFE;
+  --teal:    #0D9488;
+  --teal2:   #2DD4BF;
+  --green:   #059669;
+  --green2:  #34D399;
+  --yellow:  #D97706;
+  --yellow2: #FCD34D;
+  --red:     #EF4444;
+  --white:   #FFFFFF;
+
+  --text:    #0C1A3A;
+  --text2:   #3D5A80;
+  --text3:   #8BA3C0;
+
+  --border:  rgba(91,139,255,0.13);
+  --border2: rgba(91,139,255,0.24);
+  --border3: rgba(91,139,255,0.40);
+
+  /* Rich gradients */
+  --grad-blue:    linear-gradient(135deg, #1A56DB 0%, #2563EB 45%, #0891B2 100%);
+  --grad-blue2:   linear-gradient(135deg, #1e3a8a 0%, #1A56DB 100%);
+  --grad-teal:    linear-gradient(135deg, #0D9488 0%, #0891B2 50%, #2DD4BF 100%);
+  --grad-green:   linear-gradient(135deg, #059669 0%, #10B981 50%, #34D399 100%);
+  --grad-yellow:  linear-gradient(135deg, #B45309 0%, #D97706 50%, #FCD34D 100%);
+  --grad-hero:    linear-gradient(145deg, #EFF6FF 0%, #E0F2FE 30%, #F0FDFA 65%, #FEFCE8 100%);
+  --grad-sidebar: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(239,246,255,0.96) 100%);
+  --grad-card:    linear-gradient(145deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.65) 100%);
+  --grad-accent:  linear-gradient(135deg, #1A56DB, #0D9488, #059669);
+  --grad-warm:    linear-gradient(135deg, #D97706, #FCD34D);
+
+  /* Week colours */
+  --w1:#EEF2FF; --w1t:#3730A3;
+  --w2:#ECFDF5; --w2t:#065F46;
+  --w3:#FFFBEB; --w3t:#92400E;
+  --w4:#E0F2FE; --w4t:#075985;
+
+  /* Glass surfaces */
+  --glass:    rgba(255,255,255,0.72);
+  --glass2:   rgba(255,255,255,0.45);
+  --glass3:   rgba(255,255,255,0.25);
+
+  /* Shadows */
+  --shadow:   0 2px 16px rgba(26,86,219,0.09), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow2:  0 12px 40px rgba(26,86,219,0.16), 0 4px 12px rgba(0,0,0,0.07);
+  --shadow3:  0 24px 64px rgba(26,86,219,0.22), 0 8px 24px rgba(0,0,0,0.10);
+
+  /* Glow effects */
+  --glow-blue:   0 0 20px rgba(37,99,235,0.45), 0 0 60px rgba(26,86,219,0.18);
+  --glow-blue2:  0 0 30px rgba(37,99,235,0.55), 0 0 80px rgba(26,86,219,0.22);
+  --glow-teal:   0 0 20px rgba(13,148,136,0.45), 0 0 50px rgba(13,148,136,0.18);
+  --glow-green:  0 0 20px rgba(5,150,105,0.40), 0 0 50px rgba(52,211,153,0.15);
+  --glow-yellow: 0 0 20px rgba(252,211,77,0.55), 0 0 50px rgba(217,119,6,0.18);
+
+  --r:  18px;
+  --r2: 12px;
+  --r3: 26px;
+}
+
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { font-size:15px; scroll-behavior:smooth; }
+
+body {
+  font-family:'DM Sans',sans-serif;
+  background: var(--grad-hero);
+  background-attachment: fixed;
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ── AMBIENT ORBS ── */
+.orb {
+  position:fixed; border-radius:50%; pointer-events:none; z-index:0;
+  filter: blur(1px);
+}
+.orb-1 {
+  width:560px; height:560px; top:-140px; right:-100px;
+  background: radial-gradient(circle at 40% 40%, rgba(37,99,235,0.14) 0%, rgba(14,165,233,0.07) 50%, transparent 75%);
+  animation: orb1 14s ease-in-out infinite alternate;
+}
+.orb-2 {
+  width:460px; height:460px; bottom:-120px; left:40px;
+  background: radial-gradient(circle at 60% 60%, rgba(13,148,136,0.13) 0%, rgba(5,150,105,0.07) 50%, transparent 75%);
+  animation: orb1 18s ease-in-out infinite alternate-reverse;
+}
+.orb-3 {
+  width:300px; height:300px; top:40%; right:30%;
+  background: radial-gradient(circle, rgba(252,211,77,0.09) 0%, transparent 70%);
+  animation: orb1 22s ease-in-out infinite alternate;
+}
+@keyframes orb1 {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(35px,25px) scale(1.12); }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width:5px; height:5px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background: var(--border3); border-radius:10px; }
+
+/* ── LAYOUT ── */
+.app { display:flex; min-height:100vh; }
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width:252px; flex-shrink:0;
+  background: var(--grad-sidebar);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-right: 1px solid var(--border2);
+  padding: 22px 14px;
+  display:flex; flex-direction:column;
+  position:fixed; top:0; left:0; bottom:0;
+  z-index:100; overflow-y:auto;
+  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1);
+  box-shadow: 6px 0 40px rgba(26,86,219,0.07);
+}
+.main { margin-left:252px; flex:1; min-width:0; position:relative; z-index:1; }
+.page { display:none; padding:32px; max-width:940px; }
+.page.active { display:block; }
+
+/* ── LOGO ── */
+.logo { display:flex; align-items:center; gap:11px; margin-bottom:30px; padding:0 6px; }
+.logo-mark {
+  width:38px; height:38px; border-radius:11px;
+  background: var(--grad-blue);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  box-shadow: var(--glow-blue);
+  position:relative;
+}
+.logo-mark::after {
+  content:''; position:absolute; inset:-2px; border-radius:13px;
+  background: var(--grad-blue); opacity:0.3; filter:blur(6px); z-index:-1;
+}
+.logo-mark svg { width:19px; height:19px; fill:none; stroke:#fff; stroke-width:2.2; }
+.logo-text {
+  font-size:16px; font-weight:800; letter-spacing:.05em;
+  background: var(--grad-blue); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.logo-sub { font-size:10px; color:var(--text3); letter-spacing:.1em; text-transform:uppercase; margin-top:1px; }
+
+/* ── NAV ── */
+.nav-section { margin-bottom:4px; }
+.nav-label {
+  font-size:10px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; color:var(--text3);
+  padding:0 10px; margin-bottom:3px; margin-top:20px;
+}
+.nav-item {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 12px; border-radius:var(--r2);
+  font-size:13.5px; font-weight:500; color:var(--text2);
+  cursor:pointer; transition:all 0.2s cubic-bezier(0.4,0,0.2,1);
+  border:none; background:none; width:100%; text-align:left;
+  position:relative; overflow:hidden;
+}
+.nav-item::before {
+  content:''; position:absolute; inset:0; border-radius:var(--r2);
+  background: var(--grad-blue); opacity:0; transition:opacity 0.2s;
+}
+.nav-item:hover { color:var(--blue2); transform:translateX(4px); }
+.nav-item:hover { background: rgba(37,99,235,0.07); }
+.nav-item.active {
+  background: var(--grad-blue); color:#fff; font-weight:700;
+  box-shadow: 0 4px 16px rgba(26,86,219,0.35), var(--glow-blue);
+}
+.nav-item.active:hover { transform:none; }
+.nav-item svg { width:16px; height:16px; flex-shrink:0; position:relative; z-index:1; }
+.nav-item span:not(.nav-badge) { position:relative; z-index:1; }
+.nav-badge {
+  margin-left:auto; font-size:10px; font-weight:800;
+  background: var(--grad-yellow); color:#fff;
+  padding:2px 7px; border-radius:20px; position:relative; z-index:1;
+  box-shadow: 0 2px 8px rgba(217,119,6,0.3);
+}
+.nav-item.active .nav-badge { background:rgba(255,255,255,0.25); }
+
+/* ── STREAK CARD ── */
+.streak-card {
+  margin-top:auto;
+  background: linear-gradient(135deg, rgba(217,119,6,0.10) 0%, rgba(252,211,77,0.07) 100%);
+  border-radius:var(--r); padding:16px 18px;
+  border:1px solid rgba(217,119,6,0.22);
+  backdrop-filter:blur(12px); position:relative; overflow:hidden;
+}
+.streak-card::before {
+  content:''; position:absolute; top:-20px; right:-20px;
+  width:80px; height:80px; border-radius:50%;
+  background: radial-gradient(circle, rgba(252,211,77,0.25) 0%, transparent 70%);
+  pointer-events:none;
+}
+.streak-label { font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--yellow); margin-bottom:5px; }
+.streak-num { font-size:34px; font-weight:800; color:var(--yellow); line-height:1; filter:drop-shadow(0 0 10px rgba(252,211,77,0.6)); }
+.streak-sub { font-size:11px; color:var(--text3); margin-top:3px; }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  display:flex; align-items:flex-start; justify-content:space-between;
+  margin-bottom:28px; flex-wrap:wrap; gap:12px;
+}
+.page-title {
+  font-size:30px; font-weight:800; letter-spacing:-.03em; line-height:1.15;
+  background: var(--grad-blue); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.page-subtitle { font-size:13.5px; color:var(--text2); margin-top:5px; font-weight:400; }
+
+/* ── GLASS CARD ── */
+.card {
+  background: var(--glass);
+  backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+  border:1px solid var(--border2);
+  border-radius:var(--r); padding:22px 24px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.25s, transform 0.25s;
+  position:relative; overflow:hidden;
+}
+.card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.9) 50%, transparent 100%);
+  pointer-events:none;
+}
+.card::after {
+  content:''; position:absolute; inset:0; border-radius:var(--r);
+  background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+  pointer-events:none;
+}
+.card:hover { box-shadow:var(--shadow2); transform:translateY(-1px); }
+.card + .card, .card-grid + .card { margin-top:14px; }
+
+/* ── GRID ── */
+.card-grid { display:grid; gap:14px; }
+.g2 { grid-template-columns:repeat(2,1fr); }
+.g3 { grid-template-columns:repeat(3,1fr); }
+.g4 { grid-template-columns:repeat(4,1fr); }
+
+/* ── STAT CARDS ── */
+.stat-card {
+  background: var(--glass);
+  backdrop-filter:blur(22px); -webkit-backdrop-filter:blur(22px);
+  border:1px solid var(--border2);
+  border-radius:var(--r); padding:20px 22px;
+  box-shadow:var(--shadow);
+  transition:all 0.28s cubic-bezier(0.34,1.56,0.64,1);
+  position:relative; overflow:hidden; cursor:default;
+}
+.stat-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
+}
+.stat-card::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  border-radius:0 0 var(--r) var(--r);
+  background:var(--grad-blue); transform:scaleX(0); transition:transform 0.3s;
+}
+.stat-card:hover { transform:translateY(-5px) scale(1.01); box-shadow:var(--shadow2); }
+.stat-card:hover::after { transform:scaleX(1); }
+.stat-label { font-size:10px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--text3); margin-bottom:8px; }
+.stat-value { font-size:34px; font-weight:800; line-height:1; color:var(--text); }
+.stat-change { font-size:11.5px; color:var(--text3); margin-top:5px; }
+.stat-change .pos { color:var(--green); font-weight:700; }
+.stat-change .neg { color:var(--red); font-weight:700; }
+
+/* ── PROGRESS BAR ── */
+.prog-wrap { margin-top:10px; }
+.prog-bar-bg { height:6px; background:rgba(91,139,255,0.12); border-radius:10px; overflow:hidden; }
+.prog-bar-fill {
+  height:100%; border-radius:10px; background:var(--grad-blue);
+  transition:width 0.8s cubic-bezier(0.4,0,0.2,1);
+  box-shadow:0 0 10px rgba(37,99,235,0.5);
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  padding:11px 22px; border-radius:var(--r2);
+  font-family:'DM Sans',sans-serif; font-size:13.5px; font-weight:700;
+  cursor:pointer; transition:all 0.22s cubic-bezier(0.34,1.56,0.64,1); border:none; white-space:nowrap;
+  position:relative; overflow:hidden;
+}
+.btn::before {
+  content:''; position:absolute; inset:0;
+  background:rgba(255,255,255,0); transition:background 0.2s;
+  border-radius:var(--r2);
+}
+.btn:hover::before { background:rgba(255,255,255,0.1); }
+.btn-primary {
+  background:var(--grad-blue); color:#fff;
+  box-shadow:0 4px 16px rgba(26,86,219,0.35), 0 0 0 0 rgba(37,99,235,0);
+}
+.btn-primary:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(26,86,219,0.45), var(--glow-blue); }
+.btn-primary:active { transform:translateY(0) scale(0.98); }
+.btn-outline {
+  background:var(--glass2); color:var(--text);
+  border:1px solid var(--border2); backdrop-filter:blur(12px);
+}
+.btn-outline:hover { background:var(--glass); border-color:var(--blue3); color:var(--blue2); transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,99,235,0.12); }
+.btn-accent { background:var(--grad-teal); color:#fff; box-shadow:0 4px 16px rgba(13,148,136,0.35); }
+.btn-accent:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(13,148,136,0.45), var(--glow-teal); }
+.btn-ghost { background:transparent; color:var(--text2); border:none; padding:9px 13px; }
+.btn-ghost:hover { color:var(--blue2); background:rgba(37,99,235,0.07); border-radius:var(--r2); }
+.btn-sm { padding:8px 15px; font-size:12.5px; }
+.btn-icon {
+  padding:9px; border-radius:var(--r2);
+  background:var(--glass2); border:1px solid var(--border);
+  cursor:pointer; transition:all 0.2s;
+  display:inline-flex; align-items:center; justify-content:center;
+  backdrop-filter:blur(10px);
+}
+.btn-icon:hover { background:var(--glass); border-color:var(--blue3); transform:scale(1.08); box-shadow:0 4px 12px rgba(37,99,235,0.14); }
+.btn-icon svg { width:15px; height:15px; }
+
+/* BADGES */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 11px; font-weight: 700; letter-spacing: .02em;
+}
+.badge-w1 { background: var(--w1); color: var(--w1t); }
+.badge-w2 { background: var(--w2); color: var(--w2t); }
+.badge-w3 { background: var(--w3); color: var(--w3t); }
+.badge-w4 { background: var(--w4); color: var(--w4t); }
+.badge-green { background: rgba(16,185,129,0.12); color: #065F46; border: 1px solid rgba(16,185,129,0.25); }
+.badge-amber { background: rgba(245,158,11,0.12); color: #92400E; border: 1px solid rgba(245,158,11,0.25); }
+.badge-red   { background: rgba(239,68,68,0.1); color: #991B1B; border: 1px solid rgba(239,68,68,0.2); }
+.badge-blue  { background: rgba(59,130,246,0.1); color: #1e40af; border: 1px solid rgba(59,130,246,0.2); }
+
+/* FORM ELEMENTS */
+input, textarea, select {
+  font-family: 'DM Sans', sans-serif; font-size: 14px;
+  background: var(--glass2); border: 1px solid var(--border2);
+  border-radius: var(--r2); color: var(--text); width: 100%;
+  padding: 11px 15px; outline: none;
+  transition: all 0.2s; backdrop-filter: blur(8px);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--blue3);
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+}
+textarea { resize: vertical; min-height: 80px; line-height: 1.65; }
+label { font-size: 12px; font-weight: 600; color: var(--text2); display: block; margin-bottom: 6px; letter-spacing: .02em; }
+.form-group { margin-bottom: 16px; }
+input[type=range] {
+  -webkit-appearance: none; height: 4px; border-radius: 10px; padding: 0; border: none;
+  background: var(--border2);
+  background-image: var(--grad-blue);
+  background-size: 0% 100%; background-repeat: no-repeat;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%;
+  background: #fff; border: 2px solid var(--blue2); cursor: pointer;
+  box-shadow: 0 0 8px rgba(37,99,235,0.3);
+}
+
+/* WEEK TAGS */
+.week-tag { display: inline-block; width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.wt1 { background: var(--blue2); }
+.wt2 { background: var(--teal); }
+.wt3 { background: var(--yellow); }
+.wt4 { background: var(--green); }
+
+/* DAY GRID */
+.day-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.day-dot {
+  aspect-ratio: 1; border-radius: var(--r2); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; transition: all 0.2s cubic-bezier(0.34,1.56,0.64,1);
+  border: 1px solid var(--border2);
+  background: var(--glass2);
+  backdrop-filter: blur(8px);
+  color: var(--text2); position: relative;
+}
+.day-dot:hover { border-color: var(--blue3); color: var(--blue2); transform: scale(1.08); box-shadow: 0 4px 12px rgba(59,130,246,0.2); }
+.day-dot.done { background: var(--grad-blue); color: #fff; border-color: transparent; box-shadow: var(--glow-blue); }
+.day-dot.active-day { border-color: var(--teal); color: var(--teal); border-width: 2px; box-shadow: 0 0 0 3px rgba(20,184,166,0.15); }
+.day-dot.done.active-day { background: var(--grad-teal); border-color: transparent; box-shadow: var(--glow-teal); }
+.day-dot .check { position: absolute; top: -4px; right: -4px; width: 13px; height: 13px; background: var(--green2); border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 0 6px rgba(52,211,153,0.5); }
+.day-dot.done .check { display: flex; }
+.day-dot .check svg { width: 7px; height: 7px; stroke: #fff; stroke-width: 3; fill: none; }
+
+/* SCORE BUTTONS */
+.score-row { display: flex; gap: 6px; }
+.score-btn {
+  flex: 1; padding: 10px 4px; border-radius: var(--r2);
+  border: 1px solid var(--border2); background: var(--glass2);
+  font-size: 12px; font-weight: 700; cursor: pointer; text-align: center;
+  transition: all 0.18s; color: var(--text2); backdrop-filter: blur(6px);
+}
+.score-btn:hover { border-color: var(--blue3); color: var(--blue2); transform: translateY(-1px); }
+.score-btn.s1.sel { background: rgba(239,68,68,0.1); border-color: #EF4444; color: #991B1B; }
+.score-btn.s2.sel { background: rgba(245,158,11,0.1); border-color: #F59E0B; color: #92400E; }
+.score-btn.s3.sel { background: rgba(20,184,166,0.1); border-color: var(--teal); color: var(--teal); }
+.score-btn.s4.sel { background: rgba(59,130,246,0.1); border-color: var(--blue3); color: var(--blue2); }
+.score-btn.s5.sel { background: rgba(16,185,129,0.1); border-color: var(--green); color: #065F46; }
+
+/* CHART BARS */
+.chart-wrap { display: flex; align-items: flex-end; gap: 3px; height: 100px; padding-bottom: 24px; position: relative; }
+.chart-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.chart-bar { width: 100%; border-radius: 5px 5px 0 0; min-height: 3px; transition: height 0.5s cubic-bezier(0.4,0,0.2,1); }
+.chart-label { font-size: 9px; color: var(--text3); position: absolute; bottom: 0; font-family: 'DM Mono', monospace; }
+
+#radarCanvas { width: 100%; max-width: 280px; display: block; margin: 0 auto; }
+
+/* HABIT TRACKER */
+.habit-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.habit-row:last-child { border-bottom: none; }
+.habit-name { flex: 1; font-size: 13.5px; font-weight: 500; }
+.habit-dots { display: flex; gap: 4px; }
+.habit-dot {
+  width: 22px; height: 22px; border-radius: 7px; border: 1px solid var(--border2);
+  cursor: pointer; transition: all 0.18s; background: var(--glass2);
+}
+.habit-dot.done { background: var(--grad-green); border-color: transparent; box-shadow: 0 0 8px rgba(16,185,129,0.35); }
+.habit-dot:hover:not(.done) { border-color: var(--green); transform: scale(1.1); }
+
+/* TIMER (inline tools) */
+.timer-display { font-family: 'DM Mono', monospace; font-size: 52px; font-weight: 500; color: var(--text); text-align: center; letter-spacing: .05em; line-height: 1; }
+.timer-label { text-align: center; font-size: 12px; color: var(--text3); margin-top: 8px; letter-spacing: .1em; text-transform: uppercase; }
+
+/* INSIGHT CARD */
+.insight {
+  padding: 16px 20px; border-radius: var(--r); margin-bottom: 12px;
+  background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(13,148,136,0.06) 100%);
+  border: 1px solid rgba(59,130,246,0.18);
+  border-left: 3px solid var(--blue2);
+}
+.insight p { font-size: 13px; color: #1e3a8a; line-height: 1.65; }
+
+/* DIVIDER */
+.divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+/* TAG */
+.tag {
+  display: inline-flex; align-items: center; gap: 5px; padding: 4px 11px; border-radius: 20px;
+  font-size: 11.5px; font-weight: 600;
+  background: rgba(59,130,246,0.08); color: var(--blue2);
+  border: 1px solid rgba(59,130,246,0.18);
+}
+
+/* EMPTY STATE */
+.empty { text-align: center; padding: 40px 20px; color: var(--text3); }
+.empty svg { width: 40px; height: 40px; stroke: var(--text3); margin: 0 auto 12px; display: block; fill: none; }
+.empty p { font-size: 13px; }
+
+/* ANIMATIONS */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeUp 0.4s cubic-bezier(0.4,0,0.2,1) forwards; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+.pulse { animation: pulse 2s infinite; }
+@keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+
+/* MODAL */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,23,42,0.45);
+  backdrop-filter: blur(8px);
+  z-index: 1000; display: flex; align-items: center; justify-content: center;
+  padding: 16px; opacity: 0; pointer-events: none; transition: opacity 0.25s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+.modal {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  border-radius: var(--r3); padding: 30px;
+  max-width: 620px; width: 100%; max-height: 87vh; overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(27,79,216,0.18), 0 4px 16px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.7);
+  transform: scale(0.95) translateY(10px); transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1);
+}
+.modal-overlay.open .modal { transform: scale(1) translateY(0); }
+.modal-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 22px; }
+.modal-title { font-size: 19px; font-weight: 700; background: var(--grad-blue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* TOAST */
+.toast-wrap { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+  background: rgba(15,23,42,0.88);
+  backdrop-filter: blur(16px);
+  color: #fff; padding: 12px 20px;
+  border-radius: var(--r); font-size: 13px; font-weight: 500;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.1);
+  transform: translateX(120%); transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+  display: flex; align-items: center; gap: 9px; max-width: 300px;
+}
+.toast.show { transform: translateX(0); }
+.toast svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+/* HAMBURGER */
+.hamburger {
+  display: none; position: fixed; top: 16px; left: 16px; z-index: 200;
+  background: var(--glass); border: 1px solid var(--border2); border-radius: var(--r2);
+  padding: 9px; cursor: pointer; box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+.sidebar-overlay { display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.4); backdrop-filter: blur(4px); z-index: 99; }
+
+/* CLOCK */
+.clock-display { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--text3); }
+
+/* TOPIC WHEEL */
+.wheel-btn {
+  width: 130px; height: 130px; border-radius: 50%;
+  background: var(--grad-blue); color: #fff; border: none; cursor: pointer;
+  font-size: 13px; font-weight: 700; transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+  margin: 0 auto 20px; box-shadow: var(--glow-blue);
+}
+.wheel-btn:hover { transform: scale(1.08); box-shadow: 0 0 40px rgba(27,79,216,0.45); }
+.wheel-btn:active { transform: scale(0.96); }
+.wheel-btn svg { width: 26px; height: 26px; }
+.topic-display {
+  background: var(--glass); border: 1px solid var(--border2);
+  backdrop-filter: blur(12px);
+  border-radius: var(--r); padding: 18px 22px; text-align: center;
+  font-size: 16px; font-weight: 500; min-height: 60px;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.35s;
+}
+
+/* REFLECTION PROMPTS */
+.prompt-card {
+  background: var(--glass2); border: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  border-radius: var(--r); padding: 16px 18px; margin-bottom: 10px;
+  cursor: pointer; transition: all 0.2s;
+}
+.prompt-card:hover { border-color: var(--blue3); background: var(--glass); transform: translateX(4px); box-shadow: 0 4px 16px rgba(59,130,246,0.1); }
+.prompt-card.used { opacity: 0.4; }
+.prompt-text { font-size: 14px; color: var(--text); line-height: 1.55; }
+
+/* SECTION TITLE */
+.sec-title { font-size: 11px; font-weight: 700; color: var(--text3); margin-bottom: 14px; letter-spacing: .1em; text-transform: uppercase; }
+
+/* COLLAPSIBLE */
+.collapsible-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; }
+.collapsible-header svg { transition: transform 0.25s; flex-shrink: 0; }
+.collapsible-header.open svg { transform: rotate(180deg); }
+.collapsible-body { overflow: hidden; transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1); max-height: 0; }
+.collapsible-body.open { max-height: 2000px; }
+
+/* QUOTE BOX */
+.quote-box {
+  background: linear-gradient(135deg, rgba(27,79,216,0.05) 0%, rgba(13,148,136,0.04) 100%);
+  border-radius: var(--r); padding: 20px 22px;
+  border: 1px solid rgba(59,130,246,0.12);
+  position: relative;
+}
+.quote-text { font-size: 15px; line-height: 1.75; color: var(--text); font-style: italic; }
+.quote-author { font-size: 12px; font-weight: 700; color: var(--blue2); margin-top: 10px; }
+
+/* HEATMAP */
+.heatmap-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 5px; }
+.heat-cell { aspect-ratio: 1; border-radius: 5px; cursor: pointer; transition: all 0.18s; position: relative; }
+.heat-cell:hover { transform: scale(1.15); }
+.heat-cell:hover::after { content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%); background: rgba(15,23,42,0.88); backdrop-filter: blur(8px); color: #fff; font-size: 10px; padding: 5px 9px; border-radius: 7px; white-space: nowrap; z-index: 10; pointer-events: none; }
+
+/* WEEK TABS */
+.week-tabs { display: flex; gap: 6px; margin-bottom: 22px; flex-wrap: wrap; }
+.week-tab {
+  padding: 8px 15px; border-radius: 20px; font-size: 12.5px; font-weight: 600;
+  cursor: pointer; border: 1px solid var(--border2);
+  background: var(--glass2); color: var(--text2);
+  transition: all 0.2s; backdrop-filter: blur(8px);
+}
+.week-tab:hover { border-color: var(--blue3); color: var(--blue2); }
+.week-tab.active { background: var(--grad-blue); color: #fff; border-color: transparent; box-shadow: 0 4px 12px rgba(27,79,216,0.25); }
+
+/* CHECKLIST */
+.check-item { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.check-item:last-child { border-bottom: none; }
+.check-box {
+  width: 21px; height: 21px; border-radius: 7px; border: 1.5px solid var(--border2);
+  flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s cubic-bezier(0.34,1.56,0.64,1); margin-top: 1px;
+  background: var(--glass2);
+}
+.check-box:hover { border-color: var(--teal); transform: scale(1.08); }
+.check-box.checked { background: var(--grad-teal); border-color: transparent; box-shadow: 0 0 10px rgba(13,148,136,0.35); }
+.check-box svg { width: 11px; height: 11px; stroke: #fff; stroke-width: 3; fill: none; display: none; }
+.check-box.checked svg { display: block; }
+.check-text { font-size: 13.5px; line-height: 1.55; flex: 1; }
+.check-text.done { text-decoration: line-through; color: var(--text3); }
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); }
+  .sidebar-overlay { display: block; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .sidebar-overlay.open { opacity: 1; pointer-events: all; }
+  .main { margin-left: 0; }
+  .hamburger { display: flex; }
+  .page { padding: 72px 16px 24px; }
+  .g2, .g3, .g4 { grid-template-columns: 1fr; }
+  .day-grid { grid-template-columns: repeat(6, 1fr); }
+  .page-title { font-size: 22px; }
+  .timer-display { font-size: 38px; }
+  .score-row { flex-wrap: wrap; }
+  .score-btn { min-width: calc(33% - 4px); }
+}
+@media (min-width: 769px) and (max-width: 1100px) {
+  .g4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* DIMENSION BARS */
+.dim-name { font-size: 12px; color: var(--text2); width: 150px; flex-shrink: 0; font-weight: 500; }
+.dim-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.dim-score { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text3); width: 28px; text-align: right; }
+.combo-bar { flex: 1; height: 8px; background: rgba(99,147,255,0.1); border-radius: 10px; overflow: hidden; }
+.combo-fill { height: 100%; border-radius: 10px; transition: width 0.6s cubic-bezier(0.4,0,0.2,1); }
+.c-blue   { background: var(--grad-blue); }
+.c-teal   { background: var(--grad-teal); }
+.c-green  { background: var(--grad-green); }
+.c-amber  { background: var(--grad-yellow); }
+.c-purple { background: linear-gradient(135deg,#7c3aed,#a855f7); }
+.c-red    { background: linear-gradient(135deg,#ef4444,#f87171); }
+
+/* NOTES */
+.note-card {
+  background: var(--glass); border: 1px solid var(--border2);
+  backdrop-filter: blur(16px);
+  border-radius: var(--r); padding: 17px 19px; cursor: pointer;
+  transition: all 0.2s;
+}
+.note-card:hover { border-color: var(--blue3); box-shadow: 0 6px 20px rgba(59,130,246,0.12); transform: translateY(-2px); }
+.note-title { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+.note-preview { font-size: 12.5px; color: var(--text3); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.note-meta { font-size: 11px; color: var(--text3); margin-top: 8px; }
+
+/* FEYNMAN */
+.feynman-stages { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+.fstage {
+  flex: 1; min-width: 100px; padding: 13px 10px; border-radius: var(--r2);
+  background: var(--glass2); border: 1px solid var(--border2);
+  backdrop-filter: blur(10px);
+  text-align: center; cursor: pointer; transition: all 0.2s;
+  font-size: 12px; font-weight: 600; color: var(--text2);
+}
+.fstage:hover { border-color: var(--blue3); transform: translateY(-1px); }
+.fstage.active { background: var(--grad-blue); color: #fff; border-color: transparent; box-shadow: var(--glow-blue); }
+.fstage-icon { font-size: 18px; margin-bottom: 5px; }
+
+/* CALENDAR DOT STATUS */
+.day-dot.partial { background: rgba(245,158,11,0.1); border-color: var(--yellow); }
+
+/* TASK TIMER PAGE */
+.tt-mode-btn {
+  padding: 8px 20px; border-radius: 20px; font-size: 13px; font-weight: 600;
+  border: 1.5px solid var(--border2); background: var(--glass2); color: var(--text2);
+  cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+  backdrop-filter: blur(8px);
+}
+.tt-mode-btn:hover { border-color: var(--blue3); color: var(--blue2); }
+.tt-mode-btn.active { background: var(--grad-blue); color: #fff; border-color: transparent; box-shadow: 0 4px 12px rgba(27,79,216,0.25); }
+.tt-preset {
+  padding: 7px 15px; border-radius: var(--r2); font-size: 12.5px; font-weight: 600;
+  border: 1px solid var(--border2); background: var(--glass2); color: var(--text2);
+  cursor: pointer; transition: all 0.18s; font-family: 'DM Sans', sans-serif;
+  backdrop-filter: blur(8px);
+}
+.tt-preset:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+.tt-preset.active { background: var(--grad-teal); color: #fff; border-color: transparent; box-shadow: 0 4px 12px rgba(13,148,136,0.25); }
+.lap-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 9px 0; border-bottom: 1px solid var(--border);
+  font-family: 'DM Mono', monospace; font-size: 13px;
+}
+.lap-row:last-child { border-bottom: none; }
+.lap-num { color: var(--text3); font-size: 11px; width: 44px; }
+.lap-time { color: var(--text); font-weight: 600; }
+.lap-split { color: var(--text3); font-size: 12px; }
+.lap-row.lap-best .lap-time { color: var(--green); text-shadow: 0 0 8px rgba(16,185,129,0.4); }
+.lap-row.lap-worst .lap-time { color: var(--red); }
+.session-row {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  padding: 11px 0; border-bottom: 1px solid var(--border); gap: 8px;
+}
+.session-row:last-child { border-bottom: none; }
+.session-label { font-size: 13px; color: var(--text); font-weight: 600; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.session-meta { font-size: 11px; color: var(--text3); margin-top: 2px; }
+.session-dur { font-family: 'DM Mono', monospace; font-size: 13px; font-weight: 700; color: var(--teal); flex-shrink: 0; text-shadow: 0 0 8px rgba(13,148,136,0.3); }
+.qt-card {
+  background: var(--glass2); border: 1px solid var(--border2);
+  backdrop-filter: blur(10px); border-radius: var(--r2);
+  padding: 13px 15px; cursor: pointer; transition: all 0.22s;
+  display: flex; align-items: center; gap: 11px;
+}
+.qt-card:hover { border-color: var(--blue3); background: var(--glass); box-shadow: 0 6px 20px rgba(59,130,246,0.14); transform: translateY(-2px); }
+.qt-icon { font-size: 20px; flex-shrink: 0; }
+.qt-name { font-size: 13px; font-weight: 600; color: var(--text); }
+.qt-dur { font-size: 11px; color: var(--text3); font-family: 'DM Mono', monospace; margin-top: 2px; }
+.tt-ring-warning { stroke: var(--yellow) !important; filter: drop-shadow(0 0 6px rgba(245,158,11,0.5)); }
+.tt-ring-danger  { stroke: var(--red) !important;    filter: drop-shadow(0 0 8px rgba(239,68,68,0.6)); }
+@keyframes ttPulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+.tt-pulsing { animation: ttPulse 1s infinite; }
+@media (max-width: 768px) {
+  #timerRing { width: 180px !important; height: 180px !important; }
+  #ttDisplay { font-size: 34px !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- AMBIENT ORBS -->
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- SIDEBAR OVERLAY -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- HAMBURGER -->
+<button class="hamburger" onclick="toggleSidebar()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+</button>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="logo">
+    <div class="logo-mark">
+      <svg viewBox="0 0 24 24"><path d="M12 2L12 12M12 12L6 18M12 12L18 18M12 12L4 8M12 12L20 8"/></svg>
+    </div>
+    <div>
+      <div class="logo-text">COGNOS</div>
+      <div class="logo-sub">Mind Protocol</div>
+    </div>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Overview</div>
+    <button class="nav-item active" onclick="showPage('dashboard')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Dashboard
+    </button>
+    <button class="nav-item" onclick="showPage('today')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      Today's Challenge
+      <span class="nav-badge" id="todayBadge">1</span>
+    </button>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Training</div>
+    <button class="nav-item" onclick="showPage('challenges')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      All 30 Days
+    </button>
+    <button class="nav-item" onclick="showPage('log')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+      Daily Log
+    </button>
+    <button class="nav-item" onclick="showPage('habits')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Habit Tracker
+    </button>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Tools</div>
+    <button class="nav-item" onclick="showPage('feynman')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Feynman Lab
+    </button>
+    <button class="nav-item" onclick="showPage('tools')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M4.93 4.93a10 10 0 000 14.14"/></svg>
+      Thinking Tools
+    </button>
+    <button class="nav-item" onclick="showPage('notes')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      Notes
+    </button>
+    <button class="nav-item" onclick="showPage('timer')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 6 12 12 16.5 12"/><path d="M9 2h6"/></svg>
+      Task Timer
+    </button>
+  </div>
+
+  <div class="nav-section">
+    <div class="nav-label">Progress</div>
+    <button class="nav-item" onclick="showPage('progress')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      Analytics
+    </button>
+  </div>
+
+  <div class="streak-card" style="margin-top:20px">
+    <div class="streak-label">Current Streak</div>
+    <div class="streak-num" id="sidebarStreak">0</div>
+    <div class="streak-sub">days in a row 🔥</div>
+  </div>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+<!-- ========== DASHBOARD ========== -->
+<div class="page active fade-in" id="page-dashboard">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Good <span id="timeGreeting"></span> 👋</div>
+      <div class="page-subtitle">Your 30-day cognitive transformation. Track. Train. Transform.</div>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center">
+      <div class="clock-display" id="liveClock"></div>
+      <button class="btn btn-primary btn-sm" onclick="showPage('today')">Today's Task →</button>
+    </div>
+  </div>
+
+  <!-- STATS ROW -->
+  <div class="card-grid g4" style="margin-bottom:14px">
+    <div class="stat-card">
+      <div class="stat-label">Current Day</div>
+      <div class="stat-value" id="dashDay">1</div>
+      <div class="prog-wrap"><div class="prog-bar-bg"><div class="prog-bar-fill" style="background:var(--accent2)" id="dashDayBar"></div></div></div>
+      <div class="stat-change">of 30 days</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Streak</div>
+      <div class="stat-value" id="dashStreak">0<span style="font-size:20px">🔥</span></div>
+      <div class="stat-change">consecutive days</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Avg Score</div>
+      <div class="stat-value" id="dashAvg">—</div>
+      <div class="stat-change">out of <span style="font-weight:600">5.0</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Tasks Done</div>
+      <div class="stat-value" id="dashDone">0</div>
+      <div class="stat-change" id="dashDoneChange">Keep going!</div>
+    </div>
+  </div>
+
+  <!-- 2-COL -->
+  <div class="card-grid g2" style="margin-bottom:14px">
+    <!-- TODAY PREVIEW -->
+    <div class="card">
+      <div class="sec-title">TODAY — DAY <span id="todayNum">1</span></div>
+      <div id="todayPreviewTitle" style="font-size:16px;font-weight:600;margin-bottom:6px">—</div>
+      <div id="todayPreviewFocus" style="margin-bottom:12px"></div>
+      <div id="todayPreviewTask" style="font-size:13px;color:var(--text2);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden"></div>
+      <div class="divider"></div>
+      <button class="btn btn-primary" style="width:100%" onclick="showPage('today')">Open Today's Challenge →</button>
+    </div>
+    <!-- QUOTE -->
+    <div class="card">
+      <div class="sec-title">DAILY INSIGHT</div>
+      <div class="quote-box">
+        <div class="quote-text" id="quoteText">Loading...</div>
+        <div class="quote-author" id="quoteAuthor">—</div>
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px">
+        <button class="btn btn-outline btn-sm" onclick="nextQuote()">New Quote</button>
+        <button class="btn btn-ghost btn-sm" onclick="showPage('tools')">Thinking Tools →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 30-DAY CALENDAR -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="sec-title" style="margin-bottom:16px">30-DAY PROGRESS MAP</div>
+    <div class="day-grid" id="calendarGrid"></div>
+    <div style="display:flex;gap:16px;margin-top:14px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:5px"><div style="width:10px;height:10px;border-radius:3px;background:var(--text)"></div><span style="font-size:11px;color:var(--text3)">Completed</span></div>
+      <div style="display:flex;align-items:center;gap:5px"><div style="width:10px;height:10px;border-radius:3px;background:var(--surface);border:2px solid var(--accent2)"></div><span style="font-size:11px;color:var(--text3)">Today</span></div>
+      <div style="display:flex;align-items:center;gap:5px"><div style="width:10px;height:10px;border-radius:3px;background:var(--surface2)"></div><span style="font-size:11px;color:var(--text3)">Upcoming</span></div>
+    </div>
+  </div>
+
+  <!-- DIMENSION HEATMAP -->
+  <div class="card">
+    <div class="sec-title">COGNITIVE DIMENSION SCORES</div>
+    <div id="dimBars"></div>
+    <div class="divider"></div>
+    <button class="btn btn-ghost btn-sm" onclick="showPage('progress')">View Full Analytics →</button>
+  </div>
+</div>
+
+<!-- ========== TODAY'S CHALLENGE ========== -->
+<div class="page fade-in" id="page-today">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Today's Challenge</div>
+      <div class="page-subtitle" id="todayDate"></div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-outline btn-sm" onclick="prevDay()">← Prev</button>
+      <button class="btn btn-outline btn-sm" onclick="nextDay()">Next →</button>
+    </div>
+  </div>
+
+  <!-- DAY CARD -->
+  <div class="card" style="margin-bottom:14px" id="todayCard">
+    <!-- filled dynamically -->
+  </div>
+
+  <!-- SUB-TASKS -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="collapsible-header open" onclick="toggleCollapse(this)">
+      <div class="sec-title" style="margin:0">DAILY NON-NEGOTIABLES</div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="collapsible-body open" style="max-height:1000px">
+      <div style="height:12px"></div>
+      <div id="subtaskList"></div>
+    </div>
+  </div>
+
+  <!-- LOG THIS DAY -->
+  <div class="card" id="logCard">
+    <div class="sec-title">LOG TODAY'S PERFORMANCE</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">Score yourself honestly on each dimension. 1 = struggling, 5 = exceptional.</p>
+    <div id="scoreInputs"></div>
+    <div class="divider"></div>
+    <div class="form-group">
+      <label>Reflection — What challenged you? What changed? What was wrong?</label>
+      <textarea id="reflectionText" placeholder="Write your honest reflection..." style="min-height:100px"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Camera Talk Topic Used</label>
+      <input type="text" id="cameraTopic" placeholder="What did you speak about today?">
+    </div>
+    <div class="form-group">
+      <label>Feynman Concept Today</label>
+      <input type="text" id="feynmanConcept" placeholder="What concept did you compress into simple language?">
+    </div>
+    <button class="btn btn-primary" onclick="saveLog()" style="width:100%">Save Today's Log ✓</button>
+  </div>
+</div>
+
+<!-- ========== ALL 30 DAYS ========== -->
+<div class="page fade-in" id="page-challenges">
+  <div class="page-header">
+    <div>
+      <div class="page-title">All 30 Days</div>
+      <div class="page-subtitle">The full cognitive expansion protocol</div>
+    </div>
+  </div>
+
+  <div class="week-tabs" id="weekTabs">
+    <button class="week-tab active" onclick="filterWeek(0,this)">All Weeks</button>
+    <button class="week-tab" onclick="filterWeek(1,this)">Week 1 — Foundation</button>
+    <button class="week-tab" onclick="filterWeek(2,this)">Week 2 — Depth</button>
+    <button class="week-tab" onclick="filterWeek(3,this)">Week 3 — Pressure</button>
+    <button class="week-tab" onclick="filterWeek(4,this)">Week 4 — Mastery</button>
+  </div>
+
+  <div id="allDaysList"></div>
+</div>
+
+<!-- ========== DAILY LOG ========== -->
+<div class="page fade-in" id="page-log">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Daily Log</div>
+      <div class="page-subtitle">All your entries in one place</div>
+    </div>
+  </div>
+  <div id="logList">
+    <div class="empty">
+      <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      <p>No logs yet. Complete Day 1 to begin.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== HABIT TRACKER ========== -->
+<div class="page fade-in" id="page-habits">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Habit Tracker</div>
+      <div class="page-subtitle">Daily habits that compound your cognitive growth</div>
+    </div>
+    <button class="btn btn-outline btn-sm" onclick="openAddHabit()">+ Add Habit</button>
+  </div>
+
+  <div class="card" style="margin-bottom:14px">
+    <div class="sec-title" style="margin-bottom:16px">THIS WEEK'S HABITS</div>
+    <div id="habitList"></div>
+  </div>
+
+  <div class="card">
+    <div class="sec-title" style="margin-bottom:16px">HABIT HEATMAP — 30 DAYS</div>
+    <div class="heatmap-grid" id="heatmapGrid"></div>
+    <div style="margin-top:12px;display:flex;align-items:center;gap:6px">
+      <span style="font-size:11px;color:var(--text3)">Less</span>
+      <div style="width:12px;height:12px;border-radius:3px;background:#E5E7EB"></div>
+      <div style="width:12px;height:12px;border-radius:3px;background:#BBF7D0"></div>
+      <div style="width:12px;height:12px;border-radius:3px;background:#4ADE80"></div>
+      <div style="width:12px;height:12px;border-radius:3px;background:#16A34A"></div>
+      <span style="font-size:11px;color:var(--text3)">More</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FEYNMAN LAB ========== -->
+<div class="page fade-in" id="page-feynman">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Feynman Lab</div>
+      <div class="page-subtitle">If you can't explain it simply, you don't understand it yet.</div>
+    </div>
+  </div>
+
+  <div class="insight"><p>Named after physicist Richard Feynman — master explainer. The method: learn → explain simply → identify gaps → fill them → repeat. Real understanding shows itself in simple language.</p></div>
+
+  <div class="feynman-stages" id="feynmanStages">
+    <div class="fstage active" onclick="setStage(0,this)" data-stage="0"><div class="fstage-icon">📖</div>Step 1: Learn</div>
+    <div class="fstage" onclick="setStage(1,this)" data-stage="1"><div class="fstage-icon">✏️</div>Step 2: Explain</div>
+    <div class="fstage" onclick="setStage(2,this)" data-stage="2"><div class="fstage-icon">🔍</div>Step 3: Find Gaps</div>
+    <div class="fstage" onclick="setStage(3,this)" data-stage="3"><div class="fstage-icon">🔄</div>Step 4: Refine</div>
+  </div>
+
+  <div class="card" id="feynmanContent"></div>
+
+  <div class="card" style="margin-top:14px">
+    <div class="sec-title">SAVED COMPRESSIONS</div>
+    <div id="feynmanSaved"></div>
+  </div>
+</div>
+
+<!-- ========== THINKING TOOLS ========== -->
+<div class="page fade-in" id="page-tools">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Thinking Tools</div>
+      <div class="page-subtitle">Cognitive drills to keep you sharp between major tasks</div>
+    </div>
+  </div>
+
+  <!-- RANDOM TOPIC GENERATOR -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="sec-title" style="margin-bottom:16px">🎲 RANDOM TOPIC GENERATOR</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:20px;line-height:1.6">Spin a topic for your 5-minute camera talk. No prep allowed — speak immediately. This builds real-time cognitive fluency.</p>
+    <button class="wheel-btn" onclick="spinTopic()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+      SPIN
+    </button>
+    <div class="topic-display" id="topicDisplay">Press SPIN to get your topic</div>
+    <div style="margin-top:12px;display:flex;gap:8px">
+      <button class="btn btn-outline btn-sm" onclick="spinCategory('philosophy')">Philosophy</button>
+      <button class="btn btn-outline btn-sm" onclick="spinCategory('science')">Science</button>
+      <button class="btn btn-outline btn-sm" onclick="spinCategory('society')">Society</button>
+      <button class="btn btn-outline btn-sm" onclick="spinCategory('random')">Random</button>
+    </div>
+  </div>
+
+  <!-- FOCUS TIMER -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="sec-title" style="margin-bottom:16px">⏱ DEEP WORK TIMER</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:20px;line-height:1.6">Track your deep work sessions. The timer records your longest uninterrupted focus streak.</p>
+    <div class="timer-display" id="timerDisplay">25:00</div>
+    <div class="timer-label" id="timerLabel">POMODORO · READY</div>
+    <div style="margin-top:20px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <button class="btn btn-primary" id="timerStart" onclick="startTimer()">Start Focus</button>
+      <button class="btn btn-outline" onclick="resetTimer()">Reset</button>
+      <button class="btn btn-outline btn-sm" onclick="setTimerDuration(25)">25 min</button>
+      <button class="btn btn-outline btn-sm" onclick="setTimerDuration(50)">50 min</button>
+      <button class="btn btn-outline btn-sm" onclick="setTimerDuration(90)">90 min</button>
+    </div>
+    <div style="margin-top:16px">
+      <div class="sec-title">Focus Sessions Today</div>
+      <div id="focusSessions" style="font-size:28px;font-weight:600;color:var(--accent2)">0</div>
+      <div style="font-size:12px;color:var(--text3)">sessions completed</div>
+    </div>
+  </div>
+
+  <!-- REFLECTION PROMPTS ROULETTE -->
+  <div class="card">
+    <div class="sec-title" style="margin-bottom:16px">🧩 REFLECTION PROMPT ROULETTE</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">Click a card to use it for your thinking journal. Forces you to think from angles you wouldn't choose yourself.</p>
+    <div id="promptCards"></div>
+    <button class="btn btn-outline" style="width:100%;margin-top:12px" onclick="refreshPrompts()">Shuffle New Prompts ↺</button>
+  </div>
+</div>
+
+<!-- ========== NOTES ========== -->
+<div class="page fade-in" id="page-notes">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Notes</div>
+      <div class="page-subtitle">Capture ideas, insights, and breakthroughs</div>
+    </div>
+    <button class="btn btn-primary btn-sm" onclick="openNewNote()">+ New Note</button>
+  </div>
+  <div id="notesList"></div>
+</div>
+
+<!-- ========== PROGRESS / ANALYTICS ========== -->
+<div class="page fade-in" id="page-progress">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Analytics</div>
+      <div class="page-subtitle">Honest measurement of your cognitive growth</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="card-grid g3" style="margin-bottom:14px">
+    <div class="stat-card">
+      <div class="stat-label">Days Logged</div>
+      <div class="stat-value" id="p-logged">0</div>
+      <div class="stat-change">of 30 total</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Peak Score</div>
+      <div class="stat-value" id="p-peak">—</div>
+      <div class="stat-change">highest daily avg</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Growth Rate</div>
+      <div class="stat-value" id="p-growth">—</div>
+      <div class="stat-change">vs first week</div>
+    </div>
+  </div>
+
+  <!-- TREND CHART -->
+  <div class="card" style="margin-bottom:14px">
+    <div class="sec-title" style="margin-bottom:16px">SCORE TREND</div>
+    <div style="position:relative">
+      <div class="chart-wrap" id="trendChart"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;margin-top:4px">
+      <span style="font-size:10px;color:var(--text3);font-family:'DM Mono',monospace">Day 1</span>
+      <span style="font-size:10px;color:var(--text3);font-family:'DM Mono',monospace">Day 30</span>
+    </div>
+  </div>
+
+  <!-- RADAR + DIMENSION BREAKDOWN -->
+  <div class="card-grid g2" style="margin-bottom:14px">
+    <div class="card">
+      <div class="sec-title">DIMENSION RADAR</div>
+      <canvas id="radarCanvas" height="260"></canvas>
+    </div>
+    <div class="card">
+      <div class="sec-title" style="margin-bottom:12px">ALL DIMENSIONS</div>
+      <div id="allDimBars"></div>
+    </div>
+  </div>
+
+  <!-- RUBRIC -->
+  <div class="card">
+    <div class="sec-title" style="margin-bottom:16px">PROGRESS RUBRIC</div>
+    <div id="rubricCards"></div>
+    <div class="insight" style="margin-top:16px"><p>Scoring guidance: a weekly average of 2.5 at the start moving to 4.0+ by Day 30 represents genuine transformation. A consistent 5 across all dimensions would mean you are not being honest with yourself.</p></div>
+  </div>
+</div>
+
+<!-- ========== TASK TIMER ========== -->
+<div class="page fade-in" id="page-timer">
+  <div class="page-header">
+    <div>
+      <div class="page-title">Task Timer</div>
+      <div class="page-subtitle">Time your challenge tasks with precision. Every second counts.</div>
+    </div>
+  </div>
+
+  <!-- MAIN TIMER CARD -->
+  <div class="card" style="margin-bottom:14px;text-align:center;padding:36px 24px">
+
+    <!-- Mode pills -->
+    <div style="display:flex;gap:6px;justify-content:center;margin-bottom:28px;flex-wrap:wrap">
+      <button class="tt-mode-btn active" id="modeCountdown" onclick="setTimerMode('countdown')">Countdown</button>
+      <button class="tt-mode-btn" id="modeStopwatch" onclick="setTimerMode('stopwatch')">Stopwatch</button>
+      <button class="tt-mode-btn" id="modeInterval" onclick="setTimerMode('interval')">Interval</button>
+    </div>
+
+    <!-- SVG ring + time -->
+    <div style="position:relative;display:inline-flex;align-items:center;justify-content:center;margin-bottom:24px">
+      <svg id="timerRing" viewBox="0 0 220 220" style="width:220px;height:220px;transform:rotate(-90deg)">
+        <circle cx="110" cy="110" r="96" fill="none" stroke="var(--border)" stroke-width="8"/>
+        <circle id="timerArc" cx="110" cy="110" r="96" fill="none" stroke="var(--accent2)"
+          stroke-width="8" stroke-linecap="round"
+          stroke-dasharray="603" stroke-dashoffset="603"
+          style="transition:stroke-dashoffset 0.4s linear,stroke 0.4s"/>
+      </svg>
+      <div style="position:absolute;text-align:center">
+        <div id="ttDisplay" style="font-family:'DM Mono',monospace;font-size:44px;font-weight:500;color:var(--text);line-height:1;letter-spacing:.02em">00:00</div>
+        <div id="ttLabel" style="font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-top:6px">READY</div>
+      </div>
+    </div>
+
+    <!-- Countdown presets -->
+    <div id="countdownPresets" style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:20px">
+      <button class="tt-preset active" onclick="selectPreset(this,5*60)">5 min</button>
+      <button class="tt-preset" onclick="selectPreset(this,10*60)">10 min</button>
+      <button class="tt-preset" onclick="selectPreset(this,15*60)">15 min</button>
+      <button class="tt-preset" onclick="selectPreset(this,20*60)">20 min</button>
+      <button class="tt-preset" onclick="selectPreset(this,25*60)">25 min</button>
+      <button class="tt-preset" onclick="selectPreset(this,30*60)">30 min</button>
+      <button class="tt-preset" onclick="selectPreset(this,45*60)">45 min</button>
+      <button class="tt-preset" onclick="selectPreset(this,60*60)">60 min</button>
+      <button class="tt-preset" onclick="selectPreset(this,90*60)">90 min</button>
+    </div>
+
+    <!-- Custom input -->
+    <div id="customInputWrap" style="display:flex;gap:8px;justify-content:center;align-items:center;margin-bottom:20px">
+      <input type="number" id="customMin" min="0" max="999" placeholder="mm" style="width:70px;text-align:center;font-family:'DM Mono',monospace;font-size:15px">
+      <span style="font-size:18px;color:var(--text3);font-weight:300">:</span>
+      <input type="number" id="customSec" min="0" max="59" placeholder="ss" style="width:70px;text-align:center;font-family:'DM Mono',monospace;font-size:15px">
+      <button class="btn btn-outline btn-sm" onclick="applyCustomTime()">Set</button>
+    </div>
+
+    <!-- Interval settings (hidden by default) -->
+    <div id="intervalSettings" style="display:none;background:var(--surface2);border-radius:var(--r);padding:16px;margin-bottom:20px;text-align:left">
+      <div style="font-size:12px;font-weight:600;color:var(--text2);margin-bottom:12px;text-transform:uppercase;letter-spacing:.06em">Interval Settings</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+        <div class="form-group" style="margin:0">
+          <label>Work (min)</label>
+          <input type="number" id="intWork" value="25" min="1" style="text-align:center;font-family:'DM Mono',monospace">
+        </div>
+        <div class="form-group" style="margin:0">
+          <label>Break (min)</label>
+          <input type="number" id="intBreak" value="5" min="1" style="text-align:center;font-family:'DM Mono',monospace">
+        </div>
+        <div class="form-group" style="margin:0">
+          <label>Rounds</label>
+          <input type="number" id="intRounds" value="4" min="1" max="20" style="text-align:center;font-family:'DM Mono',monospace">
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:8px">
+        <div id="intPhaseIndicator" style="font-size:12px;color:var(--text2)">Round <span id="intCurrentRound">1</span> of <span id="intTotalRounds">4</span> · <span id="intPhaseName" style="font-weight:600;color:var(--accent2)">Work</span></div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div style="display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap">
+      <button class="btn btn-primary tt-control" id="ttStartBtn" onclick="ttStart()" style="min-width:120px;padding:13px 24px;font-size:14px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Start
+      </button>
+      <button class="btn btn-outline tt-control" id="ttPauseBtn" onclick="ttPause()" style="display:none;min-width:120px;padding:13px 24px;font-size:14px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        Pause
+      </button>
+      <button class="btn btn-outline tt-control" onclick="ttReset()" style="padding:13px 16px">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+      </button>
+      <button class="btn btn-outline tt-control" id="ttLapBtn" onclick="ttLap()" style="padding:13px 16px" title="Lap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l3 3"/><path d="M3.5 9l2.5 1"/><path d="M20.5 9l-2.5 1"/></svg>
+      </button>
+    </div>
+
+    <!-- Task label -->
+    <div style="margin-top:20px;max-width:320px;margin-left:auto;margin-right:auto">
+      <input type="text" id="ttTaskLabel" placeholder="What are you timing? (optional)" style="text-align:center;font-size:13px">
+    </div>
+  </div>
+
+  <!-- LAPS + SESSIONS side by side -->
+  <div class="card-grid g2" style="margin-bottom:14px">
+
+    <!-- LAPS -->
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <div class="sec-title" style="margin:0">LAPS / SPLITS</div>
+        <button class="btn-icon" onclick="clearLaps()" title="Clear laps">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+        </button>
+      </div>
+      <div id="lapList" style="max-height:240px;overflow-y:auto">
+        <div class="empty" style="padding:20px 0"><p style="font-size:12px">No laps yet. Press the lap button during a session.</p></div>
+      </div>
+    </div>
+
+    <!-- SESSION HISTORY -->
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <div class="sec-title" style="margin:0">SESSION HISTORY</div>
+        <button class="btn-icon" onclick="clearSessions()" title="Clear history">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+        </button>
+      </div>
+      <div id="sessionList" style="max-height:240px;overflow-y:auto">
+        <div class="empty" style="padding:20px 0"><p style="font-size:12px">Completed sessions appear here.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK TASK TIMERS linked to challenge days -->
+  <div class="card">
+    <div class="sec-title" style="margin-bottom:14px">CHALLENGE QUICK-TIMERS</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.6">One-click timers for the most common timed tasks in the 30-day protocol. Click any to load it instantly.</p>
+    <div class="card-grid g2" id="quickTimerGrid"></div>
+  </div>
+</div>
+
+</main>
+
+<!-- MODALS -->
+<div class="modal-overlay" id="noteModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="noteModalTitle">New Note</div>
+      <button class="btn-icon" onclick="closeModal('noteModal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" id="noteTitleInput" placeholder="Note title...">
+    </div>
+    <div class="form-group">
+      <label>Content</label>
+      <textarea id="noteContentInput" style="min-height:200px" placeholder="Write your thoughts..."></textarea>
+    </div>
+    <div class="form-group">
+      <label>Tag</label>
+      <select id="noteTagInput">
+        <option value="insight">💡 Insight</option>
+        <option value="question">❓ Question</option>
+        <option value="idea">🌱 Idea</option>
+        <option value="breakthrough">⚡ Breakthrough</option>
+        <option value="struggle">🔧 Struggle</option>
+        <option value="general">📝 General</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn btn-primary" style="flex:1" onclick="saveNote()">Save Note</button>
+      <button class="btn btn-outline" onclick="closeModal('noteModal')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="habitModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Add Habit</div>
+      <button class="btn-icon" onclick="closeModal('habitModal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="form-group">
+      <label>Habit Name</label>
+      <input type="text" id="habitNameInput" placeholder="e.g. Camera talk, Feynman drill...">
+    </div>
+    <div class="form-group">
+      <label>Category</label>
+      <select id="habitCatInput">
+        <option value="cognitive">🧠 Cognitive</option>
+        <option value="expression">🗣 Expression</option>
+        <option value="reading">📚 Reading</option>
+        <option value="writing">✍️ Writing</option>
+        <option value="reflection">🔍 Reflection</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" style="width:100%" onclick="saveHabit()">Add Habit</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="dayDetailModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="dayDetailTitle">Day Details</div>
+      <button class="btn-icon" onclick="closeModal('dayDetailModal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="dayDetailContent"></div>
+  </div>
+</div>
+
+<!-- TOASTS -->
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const DAYS = [
+  // WEEK 1 — Foundation
+  { day:1, week:1, title:"Cognitive Baseline Audit", focus:"Metacognition",
+    major:"Record a 10-minute unscripted talk: 'How do humans learn?' No preparation, no notes. Then write a 600-word essay answering: 'How do I currently think?' — describe your reasoning style, how you handle uncertainty, your intellectual blind spots, and what slows your thinking. Save both. Do NOT review the recording yet.",
+    subs:["📹 Camera: Speak for 2 minutes on a random topic (open any book to a random page). No prep. Evaluate filler words and structure afterwards.","✍️ Journal: What confused me about myself during this exercise? What assumptions did I make?","🧩 Feynman: Compress the concept of 'learning' into the simplest possible explanation — one analogy, one example, one limitation."] },
+  { day:2, week:1, title:"Assumption Mapping", focus:"Critical Thinking",
+    major:"Pick any strong belief you hold. Write every assumption underneath it. Then steelman the opposing view as convincingly as possible — without strawmanning it. Minimum 500 words. Also read one challenging academic paper or research paper: write 5 questions, summarize in 150 words.",
+    subs:["📹 Camera: Explain a concept from your life as if teaching a 10-year-old. 3 minutes. Did they (hypothetically) understand?","✍️ Journal: What changed my mind even slightly today? What assumption was wrong?","🧩 Feynman: Compress the belief you challenged into one sentence a child could understand."] },
+  { day:3, week:1, title:"Close Reading + Concept Mapping", focus:"Reading Depth",
+    major:"Find a dense academic paper, legal document, or philosophy text. Read 3–5 pages slowly. Write a paragraph-by-paragraph breakdown of the author's argument structure — not a summary, an argument map. Then create a visual concept map connecting: Learning → Memory → Motivation → Environment. No Google after starting.",
+    subs:["📹 Camera: Argue for a position you genuinely disagree with. 2 minutes. Was it convincing?","✍️ Journal: What patterns did I notice in the text that I normally skip over?","🧩 Feynman: Explain the concept of 'cognitive load' using only simple words and a real-life analogy."] },
+  { day:4, week:1, title:"Mental Models Training", focus:"Analytical Reasoning",
+    major:"Learn these 3 mental models: First Principles Thinking, Opportunity Cost, and Feedback Loops. Apply each one to how your school or workplace operates. Write 200 words per application — not 'this applies to decisions' but 'this explains specifically why X happens in my context.' Then identify every logical fallacy in 2 news articles.",
+    subs:["📹 Camera: Pick a random word and give a 2-minute talk on its meaning, origin, and relevance. 5 minutes prep only.","✍️ Journal: What assumption was I wrong about today?","🧩 Feynman: Explain 'First Principles Thinking' using a cooking analogy."] },
+  { day:5, week:1, title:"Intellectual Self-Debate", focus:"Dialectical Thinking",
+    major:"Pick a belief you hold with absolute certainty. Spend 20 minutes arguing sincerely against yourself — record it. Not playing devil's advocate, but genuinely trying to find where you're wrong. Then write the strongest counter-argument to your own position. Minimum 400 words. Record it.",
+    subs:["📹 Camera: Summarize your week intellectually in 2 minutes — what challenged you most?","✍️ Journal: What did I discover I actually believe vs what I thought I believed?","🧩 Feynman: Compress the concept of 'confirmation bias' into one simple explanation with an example from your own life."] },
+  { day:6, week:1, title:"Deep Observation + Memory Test", focus:"Working Memory & Perception",
+    major:"Spend 30 minutes observing any normal environment. Write patterns, behaviors, systems you notice that others would walk past. Then read a 1,000-word article. Close it. Wait 30 minutes. Write everything you recall from memory. Compare to the original — what did your brain discard?",
+    subs:["📹 Camera: Describe the most interesting thing you observed today. 2 minutes. Use precise language.","✍️ Journal: What does my memory retention pattern tell me about how I process information?","🧩 Feynman: Explain 'working memory' to a curious 8-year-old using an analogy they'd understand."] },
+  { day:7, week:1, title:"Week 1 Synthesis — Teach It All", focus:"Integration",
+    major:"Record a 7-minute video teaching everything meaningful from this week. No notes. Structured: open with your most important insight, support with 3 examples, close with what you'd do differently. Then re-read your Day 1 essay and write a 400-word critical response from the perspective of a skeptical, rigorous reader.",
+    subs:["📹 Camera: Score yourself out loud on Week 1. What improved? What is still weak? Be specific.","✍️ Journal: Write the single best idea from the week and the single biggest gap you still have.","🧩 Feynman: Compress the entire Week 1 experience into one paragraph a stranger would find useful."] },
+
+  // WEEK 2 — Depth
+  { day:8, week:2, title:"First Principles System Breakdown", focus:"Structural Reasoning",
+    major:"Choose a successful learning platform (e.g. Duolingo) or complex system you interact with daily. Break down: its core purpose, motivation loop, feedback system, reward structure, and what assumptions hold it together. Write 600 words minimum. What would you redesign from zero?",
+    subs:["📹 Camera: Present a 2-minute critique of something widely accepted. Be specific and evidence-based.","✍️ Journal: What systems around me have I been consuming without questioning their design?","🧩 Feynman: Explain 'feedback loops' using an everyday non-technical example."] },
+  { day:9, week:2, title:"Structured Debate — Both Sides", focus:"Dialectical Thinking",
+    major:"Pick a genuinely contested issue. Write a formal structured debate: Proposition (300 words), Opposition (300 words), Proposition rebuttal (200 words), Opposition rebuttal (200 words). Both sides must be as strong as possible — a reader should not be able to tell which side you agree with.",
+    subs:["📹 Camera: Deliver one side of your debate as a spoken 3-minute argument. No notes.","✍️ Journal: Which side did I find harder to argue? What does that reveal about my biases?","🧩 Feynman: Compress 'dialectical thinking' into a metaphor a 10-year-old would understand."] },
+  { day:10, week:2, title:"Speed Reading with Deep Comprehension", focus:"Reading Efficiency",
+    major:"Set a timer. Read a 2,000-word essay as fast as possible while retaining full comprehension. Write a 300-word analysis of the author's core argument and its weakest point. Record your reading time — your goal is to compress it by 20% by Day 20. Analyze how your school or workplace teaches: identify overload points, wasted effort, redesign ideas.",
+    subs:["📹 Camera: Pick a data point or statistic and explain what it does and does not prove. 2 minutes.","✍️ Journal: What is the difference between reading for comfort and reading for comprehension?","🧩 Feynman: Explain the concept of 'cognitive load' in teaching — why do students struggle?"] },
+  { day:11, week:2, title:"Probabilistic Thinking + Idea Combination", focus:"Quantitative Reasoning",
+    major:"Make 10 specific, falsifiable predictions about events that will happen within 90 days. Assign a probability to each. Write your reasoning. This is your forecasting log. Also: combine Education + Gaming + Psychology — design a new learning system concept. Write 400 words on how it would work.",
+    subs:["📹 Camera: Explain what 'statistical significance' means in plain language to a non-scientist. 2 minutes.","✍️ Journal: What do my probability estimates reveal about where I am overconfident or underconfident?","🧩 Feynman: Compress the idea of 'probability' into an explanation using a real-life everyday decision."] },
+  { day:12, week:2, title:"Hard Chapter + Analytical Writing", focus:"Cognitive Endurance",
+    major:"Read one full chapter of a book that is genuinely difficult — philosophy, technical nonfiction, dense social science. Annotate as you go. Write a 500-word response: what you understood, what confused you, what questions you'd ask the author. Also write a 500-word essay on: 'Why students struggle to learn.' No fluff allowed.",
+    subs:["📹 Camera: Explain a concept from the chapter from memory. 3 minutes. Did you actually understand it?","✍️ Journal: What was the hardest idea I encountered today and did I avoid it or push through?","🧩 Feynman: Take the hardest concept from the chapter and explain it without any jargon."] },
+  { day:13, week:2, title:"Socratic Self-Interrogation + Expert Emulation", focus:"Epistemic Rigour",
+    major:"Take any conclusion you hold with high confidence. Write a Socratic dialogue between yourself and a rigorous challenger — at least 8 exchanges. The challenger must not let you off with vague answers. Also: find a lecture or talk by an expert thinker (any field). Watch it. Then reproduce the argument from memory — write 400 words.",
+    subs:["📹 Camera: 2-minute 'position update' — a belief you held 6 months ago you no longer hold, and why.","✍️ Journal: Where did my Socratic dialogue break down? Where did I have no answer?","🧩 Feynman: Explain the 'Socratic method' using a concrete conversation example."] },
+  { day:14, week:2, title:"Week 2 Synthesis + Reflection Audit", focus:"Integration",
+    major:"Rewatch your Day 1 recording for the first time. Write: what cognitive improvements are visible? What weaknesses remain? Then write a 600-word synthesis connecting any 3 ideas from the past 2 weeks. The connection must be non-obvious. Also write 3 questions you cannot yet answer but think matter — these become your intellectual targets for Weeks 3–4.",
+    subs:["📹 Camera: Deliver a 3-minute 'intellectual update' as if presenting to a smart audience. What shifted?","✍️ Journal: What did watching myself on Day 1 reveal that I could not see from the inside?","🧩 Feynman: Compress the biggest insight from Week 2 into the simplest possible language."] },
+
+  // WEEK 3 — Pressure
+  { day:15, week:3, title:"Timed Argument Under Pressure", focus:"Processing Speed",
+    major:"Set a 15-minute timer. Pick a topic you know nothing about (random Wikipedia article). Read for 5 minutes only. Then write the strongest possible 400-word argument on any angle of that topic. Your goal is coherent, structured thinking under time pressure — not perfection.",
+    subs:["📹 Camera: 3-minute impromptu talk on a topic from a random article you open right now. No prep.","✍️ Journal: What does my quality under time pressure reveal about the depth of my actual thinking?","🧩 Feynman: Compress a concept from today's unfamiliar topic into one sentence a non-expert would understand."] },
+  { day:16, week:3, title:"Intellectual Courage + Devil's Advocate", focus:"Intellectual Courage",
+    major:"Find a position that 90%+ of people in your social circle hold. Argue sincerely against it for 500 words. Then pick a topic you know nothing about and speak for 8 minutes continuously. No thinking time. Record it. Deliver the talk immediately after reading the topic prompt.",
+    subs:["📹 Camera: Make a 2-minute case for something you believe most people around you are wrong about. Do not hedge.","✍️ Journal: What emotional resistance did I feel when arguing against my community's view?","🧩 Feynman: Compress 'intellectual courage' — why is it hard to hold unpopular true beliefs?"] },
+  { day:17, week:3, title:"Mental Model Application + Knowledge Compression", focus:"Applied Reasoning",
+    major:"Pick 3 mental models you are unfamiliar with (e.g. Second-Order Thinking, Overton Window, Hanlon's Razor, Regression to the Mean). Apply each to a real situation in your life. Write 200 words per application. Also turn a complex topic into 4 formats: tweet (280 chars), analogy, diagram sketch, and short story.",
+    subs:["📹 Camera: Explain one mental model using only a real example from your own life. 2 minutes.","✍️ Journal: Which mental model cracked open something I previously couldn't explain?","🧩 Feynman: Explain 'second-order thinking' — what happens when you only think one step ahead?"] },
+  { day:18, week:3, title:"Deep Work Endurance Block", focus:"Cognitive Stamina",
+    major:"90-minute focused study block. No phone. No music. No breaks. Study the most difficult material you've encountered in this challenge. Measure mental fatigue: write a before and after cognitive self-assessment — what degraded, what held, at what point did resistance begin? Repeat with a 20-minute break cycle if needed.",
+    subs:["📹 Camera: Teach your topic from the 90-minute block immediately after finishing — from memory. 3 minutes.","✍️ Journal: What were the exact conditions of my deepest focus today? Time, location, state of mind?","🧩 Feynman: Compress the concept of 'deep work' — why does distraction make you cognitively weaker over time?"] },
+  { day:19, week:3, title:"Cognitive Bias Hunt + Ethical Reasoning", focus:"Self-Awareness & Moral Reasoning",
+    major:"Study 5 cognitive biases (availability heuristic, in-group bias, sunk cost, anchoring, hindsight bias). Observe yourself during the day and document when each appears. Then take a genuine ethical dilemma. Analyze it through 3 frameworks (consequentialist, deontological, virtue ethics). Write 500 words. Reach a specific conclusion.",
+    subs:["📹 Camera: State your actual ethical position on the dilemma in 2 minutes. Be precise. No 'it depends' without specifying on what.","✍️ Journal: Which bias showed up most today? Be ruthlessly specific about the situation.","🧩 Feynman: Explain 'confirmation bias' as if explaining to someone who doesn't believe they have it."] },
+  { day:20, week:3, title:"Speed Reading Re-Test + Socratic Questioning", focus:"Measurable Progress",
+    major:"Repeat the Day 10 exercise exactly — same format, same timer, same 300-word analysis. Compare: did your reading time drop? Did your analysis deepen? Score both speed and quality honestly. Then spend 30 minutes in pure Socratic questioning during any learning — ask ONLY questions. No statements. Write the most important questions you asked.",
+    subs:["📹 Camera: 3-minute talk on what has genuinely shifted in how you process information since Day 1. Be specific, not motivational.","✍️ Journal: What did the Socratic questioning reveal that direct study would have missed?","🧩 Feynman: Explain the concept of 'calibration' — the difference between being confident and being right."] },
+  { day:21, week:3, title:"Personal Learning Framework v1", focus:"Synthesis & Original Thinking",
+    major:"Create your own Personal Learning Framework based on everything you've experienced and learned in Weeks 1–3. It must have: a core principle, 3–5 components, one unique insight that is genuinely yours, and a practical protocol you'd give to someone else. Write 600 words + diagram. Give it a name.",
+    subs:["📹 Camera: Present your framework as if pitching it to a skeptical audience. 3 minutes. No notes.","✍️ Journal: What does this framework reveal about how I've changed since Day 1?","🧩 Feynman: Compress your entire framework into one memorable sentence."] },
+
+  // WEEK 4 — Mastery
+  { day:22, week:4, title:"Original Thesis + Public Thinking", focus:"Original Thinking",
+    major:"Write an original thesis — a claim that is genuinely yours, non-obvious, and arguable. It must be specific enough to be falsifiable. Write 600 words defending it. Also post an intellectual insight publicly (social media, note, conversation) — not perfected, just real. Observe how articulating publicly changes how you think.",
+    subs:["📹 Camera: Present your thesis in 3 minutes. Hook, claim, 2 reasons, implication.","✍️ Journal: What was the difference between thinking privately and thinking publicly?","🧩 Feynman: Compress your thesis into the clearest possible single sentence."] },
+  { day:23, week:4, title:"Interdisciplinary Connection + Bias Audit", focus:"Integrative Complexity",
+    major:"Connect 3 seemingly unrelated fields (e.g. Bible/theology + Cognitive science + Education). Find 5 genuine shared principles — not surface similarities but deep structural analogies. Write 500 words. Also: identify 3 specific decisions or conclusions from the first 3 weeks that were influenced by a cognitive bias. Write 200 words per case.",
+    subs:["📹 Camera: Describe one bias you notice in yourself that you haven't mentioned in any writing this month. 2 minutes.","✍️ Journal: Which interdisciplinary connection surprised me the most and why?","🧩 Feynman: Explain 'structural analogy' — how two completely different things can work the same way underneath."] },
+  { day:24, week:4, title:"Adversarial Collaboration + Child Test", focus:"Intellectual Humility",
+    major:"Find someone who holds a position you strongly oppose. Write the most genuinely charitable version of their full worldview — not just the surface argument but the values, experiences, and reasoning that would lead a thoughtful person to that view. 600 words. No rebuttal. Also explain a complex topic to a younger person (or imaginary child). If confusion remains, refine until it doesn't.",
+    subs:["📹 Camera: Present that opposing worldview on camera as if you hold it. 3 minutes. Could an observer tell you don't believe it?","✍️ Journal: What did writing charitably about someone I disagree with change in me?","🧩 Feynman: Explain intellectual humility — why does being confident in your views sometimes make you less intelligent?"] },
+  { day:25, week:4, title:"Long-Form Intellectual Essay", focus:"Sustained Output",
+    major:"Write a 1,000-word intellectual essay — your longest piece in this challenge — on a topic you care about deeply. Clear thesis, structured argument, evidence, acknowledgment of the strongest counter-argument. This is your best work. Take 90 minutes. No shortcuts. State a strong intellectual opinion somewhere in it — publicly or in writing.",
+    subs:["📹 Camera: Summarize your essay in exactly 90 seconds. Every second counts — structure it with precision.","✍️ Journal: What did sustained effort at 1,000 words reveal about the depth of what I know vs what I think I know?","🧩 Feynman: Compress the central argument of your essay into one sentence a stranger would find compelling."] },
+  { day:26, week:4, title:"Knowledge Gap Excavation + Original Concept", focus:"Epistemic Honesty",
+    major:"Write a 500-word honest map of everything you do not know in a domain you consider yourself knowledgeable in. Be specific — precisely named gaps. Rank your top 3. Then invent a new concept or model — name it. It must describe something real that doesn't yet have a precise name. Write 300 words explaining it.",
+    subs:["📹 Camera: Admit on camera one intellectual area where you have been faking competence. 2 minutes. No softening.","✍️ Journal: What is the difference between 'knowing about something' and 'understanding something'?","🧩 Feynman: Compress your invented concept into the clearest possible one-paragraph definition."] },
+  { day:27, week:4, title:"Forecasting Review + Long-Form Deep Talk", focus:"Calibration",
+    major:"Return to your Day 11 predictions. Score your calibration — did you over-assign or under-assign confidence? Write a 400-word analysis of your prediction errors and what systematic biases appear. Then: record a 20-minute uninterrupted, unscripted deep talk on any topic that matters to you. No stopping. No editing.",
+    subs:["📹 Camera: Explain the concept of calibration in 2 minutes — what it is and why it matters more than being right.","✍️ Journal: What did the 20-minute talk reveal about the length and depth of my thinking capacity?","🧩 Feynman: Compress 'forecasting calibration' into a metaphor about a doctor making diagnoses."] },
+  { day:28, week:4, title:"Meta-Learning Analysis + Peer Pressure Test", focus:"Intellectual Independence",
+    major:"Analyze how you learn best now vs Day 1. Be specific — not 'I understand better' but precise changes in your methods, tolerances, and strategies. Write 500 words. Then: take your Day 22 thesis and write a 400-word response to imagined social pressure to abandon it. What would you concede? What would you never concede?",
+    subs:["📹 Camera: Defend your Day 22 thesis against an imaginary smart critic. Handle 3 objections in 3 minutes.","✍️ Journal: What is the difference between updating your view from evidence vs updating from social pressure?","🧩 Feynman: Explain meta-learning — how knowing how you learn is different from just learning more."] },
+  { day:29, week:4, title:"Personal Philosophy + Systems Capstone", focus:"Philosophical Integration",
+    major:"Write your philosophy of learning and growth — 600 words. Not motivational, but precise: what do you believe about knowledge, effort, error, and intellectual courage that you would stake your reputation on? Also pick a major problem and map it as a system: variables, feedback loops, leverage points, unintended consequences of common solutions. Write 600 words.",
+    subs:["📹 Camera: Deliver your philosophy as a spoken piece. 3 minutes. This is your intellectual identity.","✍️ Journal: What beliefs have crystallized in me over 29 days that were not there before?","🧩 Feynman: Compress your philosophy of learning into the 3 most important sentences you could tell yourself at Day 1."] },
+  { day:30, week:4, title:"Cognitive Final Exam — Proof of Transformation", focus:"Accountability & Closure",
+    major:"Redo Day 1 task: Record a 10-minute talk on 'How do humans learn?' — same format, no preparation. Then re-read your Day 1 essay and write a new 600-word essay on 'How do I currently think?' Compare them side by side. Write a 400-word honest verdict: what specifically changed, what did not, and what this means for the next 30 days of your intellectual life. Score yourself on all 5 dimensions. Do not be generous.",
+    subs:["📹 Camera: Your final 5-minute talk — your most structured, confident, articulate piece. Strong opening, no filler, clear close.","✍️ Journal: Write a one-page intellectual growth plan for the next 90 days. What do you build? What do you fix?","🧩 Feynman: Compress what 'cognitive transformation' actually means — the difference between before and after this month."] }
+];
+
+const DIMENSIONS = [
+  { key:'clarity', name:'Clarity of Thought', color:'#6366F1', desc:'1=Confused, 3=Mostly clear, 5=Precise thinking' },
+  { key:'expression', name:'Expression Ability', color:'#0891B2', desc:'1=Rambling, 3=Understandable, 5=Elegant simplicity' },
+  { key:'endurance', name:'Cognitive Endurance', color:'#059669', desc:'1=Mentally tired fast, 3=Moderate, 5=Deep focus 60min+' },
+  { key:'connections', name:'Idea Connections', color:'#D97706', desc:'1=None, 3=Some links, 5=Cross-disciplinary insights' },
+  { key:'confidence', name:'Intellectual Confidence', color:'#7C3AED', desc:'1=Hesitant, 3=Stable, 5=Assertive reasoning' }
+];
+
+const QUOTES = [
+  { text:"The measure of intelligence is the ability to change.", author:"Albert Einstein" },
+  { text:"The mind is not a vessel to be filled, but a fire to be kindled.", author:"Plutarch" },
+  { text:"An unexamined life is not worth living.", author:"Socrates" },
+  { text:"Tell me and I forget. Teach me and I remember. Involve me and I learn.", author:"Benjamin Franklin" },
+  { text:"If you can't explain it simply, you don't understand it well enough.", author:"Richard Feynman" },
+  { text:"The first principle is that you must not fool yourself — and you are the easiest person to fool.", author:"Richard Feynman" },
+  { text:"The more that you read, the more things you will know.", author:"Dr. Seuss" },
+  { text:"In learning you will teach, and in teaching you will learn.", author:"Phil Collins" },
+  { text:"Intellectual growth should commence at birth and cease only at death.", author:"Albert Einstein" },
+  { text:"Education is not the filling of a pail, but the lighting of a fire.", author:"W.B. Yeats" },
+  { text:"The more I read, the more I acquire, the more certain I am that I know nothing.", author:"Voltaire" },
+  { text:"Real knowledge is to know the extent of one's ignorance.", author:"Confucius" },
+  { text:"Wonder is the beginning of wisdom.", author:"Socrates" },
+  { text:"Knowing yourself is the beginning of all wisdom.", author:"Aristotle" }
+];
+
+const TOPICS = {
+  philosophy:["Is free will an illusion?","What makes a life meaningful?","Can morality exist without religion?","Is consciousness fundamentally different from computation?","Does objective truth exist?","Is democracy the best possible system?","What do we owe to future generations?","Is personal identity the same over time?"],
+  science:["Why does the brain construct reality rather than record it?","What is the relationship between entropy and life?","If we found extraterrestrial intelligence, what would it change?","How does language shape what we can think?","What does quantum mechanics tell us about reality?","Why is mathematics so unreasonably effective at describing nature?","What are the limits of scientific knowledge?","How do emergent properties arise from simple rules?"],
+  society:["Is social media making us cognitively weaker?","What is the purpose of education really?","Why do intelligent people believe false things?","How do institutions become self-serving?","Is inequality natural or constructed?","What does a well-functioning community actually require?","How does power corrupt reasoning?","What is the role of failure in growth?"],
+  random:["Why do humans need narrative to understand reality?","What is the difference between knowledge and wisdom?","Why is boredom so cognitively valuable?","How do habits become identity?","What makes an argument elegant vs merely correct?","Why do we remember some experiences and not others?","What is the relationship between attention and understanding?","Is complexity always a sign of incomplete thinking?"]
+};
+
+const REFLECTION_PROMPTS = [
+  "What did I believe today that I cannot fully justify?",
+  "What problem am I avoiding thinking about?",
+  "If I were wrong about something I'm confident in, how would I know?",
+  "What question do I keep not asking?",
+  "What would I think differently if I had grown up in a completely different context?",
+  "What did I understand today that I couldn't explain yesterday?",
+  "What assumption am I making that most people around me also make?",
+  "When did I last genuinely change my mind? What caused it?",
+  "What are the 3 most important things I still don't understand?",
+  "If I had to teach today's topic tomorrow, what would expose my gaps?",
+  "What would a smarter version of me think about my reasoning today?",
+  "What did I rationalize today instead of actually reasoning through?",
+  "Where did I let social comfort override intellectual honesty?",
+  "What pattern am I noticing in my own thinking across this week?",
+  "If someone challenged my most important belief today, what would I say?"
+];
+
+const DEFAULT_HABITS = [
+  { id:'h1', name:'5-min Camera Talk', cat:'expression', color:'#6366F1' },
+  { id:'h2', name:'Thinking Journal (10 min)', cat:'reflection', color:'#059669' },
+  { id:'h3', name:'Feynman Compression', cat:'cognitive', color:'#D97706' },
+  { id:'h4', name:'30-min Deep Reading', cat:'reading', color:'#0891B2' }
+];
+
+const RUBRIC = [
+  { title:"Clarity of Thought", scores:[
+    {s:1, label:"Confused", desc:"Ideas are present but disconnected. Reader must infer connections."},
+    {s:2, label:"Emerging", desc:"Central idea identifiable but supporting points loosely connected."},
+    {s:3, label:"Mostly Clear", desc:"A smart reader can follow without working hard. Minor gaps."},
+    {s:4, label:"Precise", desc:"Clear thesis. Each claim follows logically. No major breakdowns."},
+    {s:5, label:"Sharp", desc:"Thesis is precise and falsifiable. Argument is airtight. Objections anticipated."}
+  ]},
+  { title:"Expression Ability", scores:[
+    {s:1, label:"Rambling", desc:"Heavy filler words. Ideas trail off. Point unclear by the end."},
+    {s:2, label:"Developing", desc:"Core idea communicated but structure is loose. Hard to follow cold."},
+    {s:3, label:"Understandable", desc:"Strong opening, structured middle, clear close. Minimal filler."},
+    {s:4, label:"Clear", desc:"Uses specific examples. A new listener can follow the argument."},
+    {s:5, label:"Elegant Simplicity", desc:"Opens with hook. Manages pacing. Ends with a real point, not a trailing sentence."}
+  ]},
+  { title:"Cognitive Endurance", scores:[
+    {s:1, label:"Fatigues Fast", desc:"Cannot produce structured output within time limits. Feels paralysed."},
+    {s:2, label:"Improving", desc:"Quality drops sharply under constraint. Structure becomes rough."},
+    {s:3, label:"Moderate", desc:"Produces coherent output within limits. Quality gap narrows."},
+    {s:4, label:"Strong", desc:"Sustains 60+ min of focused work with full output quality."},
+    {s:5, label:"Deep Focus 60min+", desc:"Timed output approaches untimed output. Thinks and writes simultaneously."}
+  ]},
+  { title:"Idea Connections", scores:[
+    {s:1, label:"None", desc:"Ideas are isolated. No attempt to link concepts across domains."},
+    {s:2, label:"Adjacent", desc:"Connects ideas within the same field. Surface-level links."},
+    {s:3, label:"Some Links", desc:"Finds non-obvious connections within 2 fields. Adds new insight."},
+    {s:4, label:"Cross-field", desc:"Regularly connects ideas across 3+ fields with genuine explanatory power."},
+    {s:5, label:"Cross-disciplinary", desc:"Generates novel insights by combining distant fields. Ideas feel genuinely original."}
+  ]},
+  { title:"Intellectual Confidence", scores:[
+    {s:1, label:"Hesitant", desc:"Avoids taking positions. Over-hedges. Cannot defend a claim under light questioning."},
+    {s:2, label:"Tentative", desc:"Takes positions but collapses under mild pushback. Confuses social pressure with argument."},
+    {s:3, label:"Stable", desc:"Holds positions under scrutiny. Concedes with evidence, not pressure."},
+    {s:4, label:"Assertive", desc:"Defends positions clearly. Knows what it would take to change mind. Engages critics directly."},
+    {s:5, label:"Assertive Reasoning", desc:"Takes intellectual risks publicly. Holds unpopular true beliefs calmly. Updated by evidence not audience."}
+  ]}
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let state = {
+  currentDay: 1,
+  logs: {},
+  habits: [...DEFAULT_HABITS],
+  habitLog: {},
+  notes: [],
+  focusSessions: 0,
+  feynmanSaved: [],
+  quoteIndex: 0,
+  timerSessions: []
+};
+
+function loadState() {
+  try {
+    const s = localStorage.getItem('cognos_v2');
+    if (s) { const parsed = JSON.parse(s); state = { ...state, ...parsed }; }
+  } catch(e) {}
+}
+function saveState() {
+  try { localStorage.setItem('cognos_v2', JSON.stringify(state)); } catch(e) {}
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  const page = document.getElementById('page-' + id);
+  if (page) { page.classList.add('active'); page.classList.remove('fade-in'); void page.offsetWidth; page.classList.add('fade-in'); }
+  document.querySelectorAll('.nav-item').forEach(n => { if (n.getAttribute('onclick') && n.getAttribute('onclick').includes("'"+id+"'")) n.classList.add('active'); });
+  closeSidebar();
+  // refresh specific pages
+  if (id === 'dashboard') renderDashboard();
+  if (id === 'today') renderToday();
+  if (id === 'challenges') renderAllDays();
+  if (id === 'log') renderLogPage();
+  if (id === 'habits') renderHabits();
+  if (id === 'feynman') renderFeynman();
+  if (id === 'tools') renderTools();
+  if (id === 'notes') renderNotes();
+  if (id === 'progress') renderProgress();
+  if (id === 'timer') renderTimerPage();
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('open');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+
+// ============================================================
+// MODAL
+// ============================================================
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+
+// ============================================================
+// TOAST
+// ============================================================
+function toast(msg, emoji='✓') {
+  const wrap = document.getElementById('toastWrap');
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 12 4 12"/><line x1="4" y1="12" x2="20" y2="12"/></svg>${msg}`;
+  wrap.appendChild(t);
+  requestAnimationFrame(() => { requestAnimationFrame(() => t.classList.add('show')); });
+  setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 400); }, 2800);
+}
+
+// ============================================================
+// DASHBOARD
+// ============================================================
+function renderDashboard() {
+  updateStats();
+  renderCalendar();
+  renderDimBars('dimBars');
+  updateQuote();
+  updateTodayPreview();
+  document.getElementById('todayDate') && (document.getElementById('todayDate').textContent = new Date().toLocaleDateString('en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'}));
+}
+
+function updateStats() {
+  const loggedDays = Object.keys(state.logs).length;
+  const allScores = Object.values(state.logs).map(l => getDayAvg(l)).filter(v => v > 0);
+  const avg = allScores.length ? (allScores.reduce((a,b)=>a+b,0)/allScores.length).toFixed(1) : '—';
+  const streak = calcStreak();
+  document.getElementById('dashDay').textContent = state.currentDay;
+  document.getElementById('dashDayBar').style.width = ((state.currentDay-1)/29*100)+'%';
+  document.getElementById('dashStreak').innerHTML = streak + '<span style="font-size:20px">🔥</span>';
+  document.getElementById('dashAvg').textContent = avg;
+  document.getElementById('dashDone').textContent = loggedDays;
+  document.getElementById('dashDoneChange').textContent = loggedDays === 0 ? 'Start today!' : `${Math.round(loggedDays/30*100)}% complete`;
+  document.getElementById('sidebarStreak').textContent = streak;
+  document.getElementById('todayNum').textContent = state.currentDay;
+  document.getElementById('p-logged') && (document.getElementById('p-logged').textContent = loggedDays);
+  document.getElementById('p-peak') && (document.getElementById('p-peak').textContent = allScores.length ? Math.max(...allScores).toFixed(1) : '—');
+}
+
+function calcStreak() {
+  let streak = 0;
+  for (let d = state.currentDay; d >= 1; d--) {
+    if (state.logs[d]) streak++;
+    else break;
+  }
+  return streak;
+}
+
+function getDayAvg(log) {
+  if (!log || !log.scores) return 0;
+  const scores = Object.values(log.scores).map(Number).filter(v => v > 0);
+  return scores.length ? scores.reduce((a,b)=>a+b,0)/scores.length : 0;
+}
+
+function updateTodayPreview() {
+  const d = DAYS[state.currentDay - 1];
+  if (!d) return;
+  document.getElementById('todayPreviewTitle').textContent = 'Day ' + d.day + ': ' + d.title;
+  document.getElementById('todayPreviewFocus').innerHTML = `<span class="badge badge-w${d.week}">${d.focus}</span>`;
+  document.getElementById('todayPreviewTask').textContent = d.major;
+  document.getElementById('todayBadge').textContent = state.currentDay;
+}
+
+// ============================================================
+// CALENDAR
+// ============================================================
+function renderCalendar() {
+  const grid = document.getElementById('calendarGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  for (let i = 1; i <= 30; i++) {
+    const div = document.createElement('div');
+    div.className = 'day-dot';
+    if (state.logs[i]) div.classList.add('done');
+    if (i === state.currentDay) div.classList.add('active-day');
+    div.innerHTML = `${i}<div class="check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 12 4 10"/></svg></div>`;
+    div.onclick = () => openDayDetail(i);
+    grid.appendChild(div);
+  }
+}
+
+function openDayDetail(dayNum) {
+  const d = DAYS[dayNum - 1];
+  if (!d) return;
+  const log = state.logs[dayNum];
+  document.getElementById('dayDetailTitle').textContent = `Day ${d.day}: ${d.title}`;
+  let html = `<div class="badge badge-w${d.week}" style="margin-bottom:12px">${d.focus}</div>`;
+  html += `<p style="font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:16px">${d.major}</p>`;
+  if (log) {
+    html += `<div class="divider"></div><div class="sec-title">YOUR LOG</div>`;
+    if (log.scores) {
+      DIMENSIONS.forEach(dim => {
+        const sc = log.scores[dim.key] || 0;
+        html += `<div class="dim-row"><span class="dim-name">${dim.name}</span><div class="combo-bar"><div class="combo-fill" style="background:${dim.color};width:${sc*20}%"></div></div><span class="dim-score">${sc}/5</span></div>`;
+      });
+    }
+    if (log.reflection) html += `<p style="font-size:13px;color:var(--text2);margin-top:12px;line-height:1.6"><strong>Reflection:</strong> ${log.reflection}</p>`;
+  }
+  html += `<div style="margin-top:16px"><button class="btn btn-primary" style="width:100%" onclick="state.currentDay=${dayNum};showPage('today');closeModal('dayDetailModal')">Go to Day ${dayNum} →</button></div>`;
+  document.getElementById('dayDetailContent').innerHTML = html;
+  openModal('dayDetailModal');
+}
+
+// ============================================================
+// DIMENSION BARS
+// ============================================================
+function renderDimBars(containerId) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const loggedDays = Object.values(state.logs);
+  const dimAvgs = {};
+  DIMENSIONS.forEach(d => {
+    const scores = loggedDays.map(l => l.scores && l.scores[d.key] ? Number(l.scores[d.key]) : 0).filter(v => v > 0);
+    dimAvgs[d.key] = scores.length ? (scores.reduce((a,b)=>a+b,0)/scores.length) : 0;
+  });
+  el.innerHTML = DIMENSIONS.map(d => {
+    const avg = dimAvgs[d.key];
+    const pct = avg / 5 * 100;
+    return `<div class="dim-row"><span class="dim-name" style="font-size:12px;color:var(--text2)">${d.name}</span><div class="combo-bar"><div class="combo-fill" style="background:${d.color};width:${pct}%"></div></div><span class="dim-score">${avg ? avg.toFixed(1) : '—'}</span></div>`;
+  }).join('');
+}
+
+// ============================================================
+// TODAY'S CHALLENGE
+// ============================================================
+function renderToday() {
+  const d = DAYS[state.currentDay - 1];
+  if (!d) return;
+  document.getElementById('todayDate').textContent = `Day ${d.day} of 30 — ${d.focus}`;
+  const card = document.getElementById('todayCard');
+  card.innerHTML = `
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+          <span class="badge badge-w${d.week}">Week ${d.week}</span>
+          <span class="tag">${d.focus}</span>
+        </div>
+        <div style="font-size:20px;font-weight:600;line-height:1.3">${d.title}</div>
+      </div>
+      <div style="font-family:'DM Mono',monospace;font-size:28px;font-weight:500;color:var(--text3);flex-shrink:0">${String(d.day).padStart(2,'0')}</div>
+    </div>
+    <div class="divider"></div>
+    <div style="font-size:13px;font-weight:600;color:var(--text2);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em">MAJOR TASK</div>
+    <p style="font-size:14px;line-height:1.75;color:var(--text)">${d.major}</p>
+  `;
+
+  // Subtasks
+  const stList = document.getElementById('subtaskList');
+  stList.innerHTML = d.subs.map((s, i) => `
+    <div class="check-item" id="subtask-${i}">
+      <div class="check-box" id="cb-${i}" onclick="toggleSubtask(${i})">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 12 4 10"/></svg>
+      </div>
+      <div class="check-text" id="ct-${i}">${s}</div>
+    </div>
+  `).join('');
+
+  // Restore subtask state
+  const log = state.logs[state.currentDay];
+  if (log && log.subtasks) {
+    log.subtasks.forEach((done, i) => {
+      if (done) {
+        document.getElementById('cb-'+i)?.classList.add('checked');
+        document.getElementById('ct-'+i)?.classList.add('done');
+      }
+    });
+  }
+
+  // Score inputs
+  const scoreEl = document.getElementById('scoreInputs');
+  scoreEl.innerHTML = DIMENSIONS.map(dim => `
+    <div style="margin-bottom:16px">
+      <label>${dim.name} <span style="font-weight:400;color:var(--text3)">${dim.desc}</span></label>
+      <div class="score-row">
+        ${[1,2,3,4,5].map(v => `<button class="score-btn s${v}" data-dim="${dim.key}" data-val="${v}" onclick="setScore('${dim.key}',${v},this)">${v}</button>`).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  // Restore scores
+  if (log && log.scores) {
+    Object.entries(log.scores).forEach(([key, val]) => {
+      document.querySelectorAll(`[data-dim="${key}"]`).forEach(btn => {
+        btn.classList.toggle('sel', parseInt(btn.dataset.val) === val);
+      });
+    });
+  }
+  if (log) {
+    document.getElementById('reflectionText').value = log.reflection || '';
+    document.getElementById('cameraTopic').value = log.cameraTopic || '';
+    document.getElementById('feynmanConcept').value = log.feynmanConcept || '';
+  } else {
+    document.getElementById('reflectionText').value = '';
+    document.getElementById('cameraTopic').value = '';
+    document.getElementById('feynmanConcept').value = '';
+  }
+}
+
+function toggleSubtask(i) {
+  const cb = document.getElementById('cb-'+i);
+  const ct = document.getElementById('ct-'+i);
+  const done = !cb.classList.contains('checked');
+  cb.classList.toggle('checked', done);
+  ct.classList.toggle('done', done);
+  if (!state.logs[state.currentDay]) state.logs[state.currentDay] = { scores:{}, subtasks:[] };
+  if (!state.logs[state.currentDay].subtasks) state.logs[state.currentDay].subtasks = [];
+  state.logs[state.currentDay].subtasks[i] = done;
+  saveState();
+}
+
+function setScore(dimKey, val, btn) {
+  document.querySelectorAll(`[data-dim="${dimKey}"]`).forEach(b => b.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+
+function prevDay() { if (state.currentDay > 1) { state.currentDay--; renderToday(); saveState(); } }
+function nextDay() { if (state.currentDay < 30) { state.currentDay++; renderToday(); saveState(); } }
+
+function saveLog() {
+  const scores = {};
+  DIMENSIONS.forEach(dim => {
+    const sel = document.querySelector(`[data-dim="${dim.key}"].sel`);
+    if (sel) scores[dim.key] = parseInt(sel.dataset.val);
+  });
+  if (Object.keys(scores).length < 5) { toast('Score all 5 dimensions first'); return; }
+  const existing = state.logs[state.currentDay] || {};
+  state.logs[state.currentDay] = {
+    ...existing,
+    scores,
+    reflection: document.getElementById('reflectionText').value,
+    cameraTopic: document.getElementById('cameraTopic').value,
+    feynmanConcept: document.getElementById('feynmanConcept').value,
+    date: new Date().toISOString()
+  };
+  saveState();
+  updateStats();
+  renderCalendar();
+  toast('Day ' + state.currentDay + ' logged successfully!');
+}
+
+// ============================================================
+// ALL DAYS
+// ============================================================
+function renderAllDays(weekFilter) {
+  const container = document.getElementById('allDaysList');
+  const days = weekFilter ? DAYS.filter(d => d.week === weekFilter) : DAYS;
+  let html = '';
+  let lastWeek = 0;
+  const weekTitles = { 1:'Week 1 — Foundation: Observation & Articulation', 2:'Week 2 — Depth: Argument & Synthesis', 3:'Week 3 — Pressure: Speed, Stress & Uncertainty', 4:'Week 4 — Mastery: Integration & Original Thought' };
+  days.forEach(d => {
+    if (d.week !== lastWeek && !weekFilter) {
+      html += `<div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin:${lastWeek?'24px':0} 0 8px">${weekTitles[d.week]}</div>`;
+      lastWeek = d.week;
+    }
+    const done = state.logs[d.day];
+    const isCurrent = d.day === state.currentDay;
+    html += `
+      <div class="card" style="margin-bottom:10px;border-left:3px solid ${done?'var(--green)':isCurrent?'var(--accent2)':'var(--border)'}">
+        <div class="collapsible-header" onclick="toggleCollapse(this)">
+          <div style="display:flex;align-items:center;gap:10px;flex:1;min-width:0">
+            <div style="font-family:'DM Mono',monospace;font-size:13px;color:var(--text3);flex-shrink:0">${String(d.day).padStart(2,'0')}</div>
+            <div style="min-width:0">
+              <div style="font-size:14px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${d.title}</div>
+              <div style="font-size:11px;color:var(--text3)">${d.focus}</div>
+            </div>
+            ${done ? '<span class="badge badge-green" style="flex-shrink:0;margin-left:4px">Done</span>' : isCurrent ? '<span class="badge badge-blue" style="flex-shrink:0;margin-left:4px">Today</span>' : ''}
+          </div>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;margin-left:8px"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+        <div class="collapsible-body">
+          <div style="height:12px"></div>
+          <p style="font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:12px">${d.major}</p>
+          <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Daily Sub-Tasks</div>
+          ${d.subs.map(s => `<div style="font-size:12.5px;color:var(--text2);padding-left:12px;border-left:2px solid var(--border);margin-bottom:4px;line-height:1.6">${s}</div>`).join('')}
+          <button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="state.currentDay=${d.day};showPage('today')">Go to Day ${d.day} →</button>
+        </div>
+      </div>
+    `;
+  });
+  container.innerHTML = html;
+}
+
+function filterWeek(week, btn) {
+  document.querySelectorAll('.week-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderAllDays(week || undefined);
+}
+
+function toggleCollapse(header) {
+  header.classList.toggle('open');
+  const body = header.nextElementSibling;
+  if (body && body.classList.contains('collapsible-body')) body.classList.toggle('open');
+}
+
+// ============================================================
+// LOG PAGE
+// ============================================================
+function renderLogPage() {
+  const container = document.getElementById('logList');
+  const entries = Object.entries(state.logs).sort((a,b) => b[0]-a[0]);
+  if (!entries.length) {
+    container.innerHTML = `<div class="empty"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><p>No logs yet. Complete Day 1 to begin.</p></div>`;
+    return;
+  }
+  container.innerHTML = entries.map(([day, log]) => {
+    const d = DAYS[parseInt(day)-1];
+    const avg = getDayAvg(log).toFixed(1);
+    const barColor = avg >= 4 ? 'var(--green)' : avg >= 3 ? 'var(--accent2)' : avg >= 2 ? 'var(--amber)' : 'var(--red)';
+    return `
+      <div class="card" style="margin-bottom:10px">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:14px;font-weight:500">Day ${day}: ${d?.title||''}</div>
+            <div style="font-size:11px;color:var(--text3)">${log.date ? new Date(log.date).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}) : ''}</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-size:22px;font-weight:600;color:${barColor}">${avg}</div>
+            <div style="font-size:10px;color:var(--text3)">avg score</div>
+          </div>
+        </div>
+        ${DIMENSIONS.map(dim => {
+          const sc = log.scores && log.scores[dim.key] ? log.scores[dim.key] : 0;
+          return `<div class="dim-row"><span class="dim-name">${dim.name}</span><div class="combo-bar"><div class="combo-fill" style="background:${dim.color};width:${sc*20}%"></div></div><span class="dim-score">${sc}/5</span></div>`;
+        }).join('')}
+        ${log.reflection ? `<div style="font-size:12.5px;color:var(--text2);background:var(--surface2);border-radius:var(--r2);padding:10px 12px;margin-top:10px;line-height:1.6"><strong style="font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--text3)">Reflection</strong><br>${log.reflection}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// HABITS
+// ============================================================
+function renderHabits() {
+  const today = new Date().toISOString().split('T')[0];
+  const container = document.getElementById('habitList');
+  if (!state.habits.length) {
+    container.innerHTML = `<div class="empty"><p>No habits yet. Click "Add Habit" to start.</p></div>`;
+  } else {
+    // Show last 7 days
+    const days7 = Array.from({length:7}, (_,i) => {
+      const d = new Date(); d.setDate(d.getDate()-6+i);
+      return d.toISOString().split('T')[0];
+    });
+    container.innerHTML = `
+      <div style="display:flex;align-items:center;margin-bottom:12px">
+        <div style="flex:1"></div>
+        <div style="display:flex;gap:4px">${days7.map(d => `<div style="width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--text3)">${new Date(d).getDate()}</div>`).join('')}</div>
+      </div>
+      ${state.habits.map(h => `
+        <div class="habit-row">
+          <div class="habit-name">${h.name}</div>
+          <div class="habit-dots">
+            ${days7.map(d => {
+              const key = `${h.id}_${d}`;
+              const done = state.habitLog[key];
+              return `<div class="habit-dot${done?' done':''}" onclick="toggleHabit('${h.id}','${d}')"></div>`;
+            }).join('')}
+          </div>
+          <button class="btn-icon" onclick="removeHabit('${h.id}')" style="margin-left:6px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/></svg>
+          </button>
+        </div>
+      `).join('')}
+    `;
+  }
+  renderHeatmap();
+}
+
+function toggleHabit(habitId, dateStr) {
+  const key = `${habitId}_${dateStr}`;
+  state.habitLog[key] = !state.habitLog[key];
+  saveState();
+  renderHabits();
+}
+
+function removeHabit(id) {
+  state.habits = state.habits.filter(h => h.id !== id);
+  saveState(); renderHabits();
+}
+
+function openAddHabit() { openModal('habitModal'); }
+function saveHabit() {
+  const name = document.getElementById('habitNameInput').value.trim();
+  if (!name) return;
+  state.habits.push({ id:'h'+Date.now(), name, cat: document.getElementById('habitCatInput').value, color:'#6366F1' });
+  document.getElementById('habitNameInput').value = '';
+  saveState(); closeModal('habitModal'); renderHabits();
+  toast('Habit added!');
+}
+
+function renderHeatmap() {
+  const grid = document.getElementById('heatmapGrid');
+  if (!grid) return;
+  const cells = Array.from({length:30}, (_,i) => {
+    const d = new Date(); d.setDate(d.getDate()-29+i);
+    const dateStr = d.toISOString().split('T')[0];
+    const count = state.habits.reduce((sum, h) => sum + (state.habitLog[`${h.id}_${dateStr}`] ? 1 : 0), 0);
+    const maxH = state.habits.length || 1;
+    const pct = count / maxH;
+    const bg = pct === 0 ? '#E5E7EB' : pct < 0.33 ? '#BBF7D0' : pct < 0.66 ? '#4ADE80' : '#16A34A';
+    return `<div class="heat-cell" style="background:${bg}" data-tip="Day ${d.getDate()}: ${count}/${maxH} habits"></div>`;
+  });
+  grid.innerHTML = cells.join('');
+}
+
+// ============================================================
+// FEYNMAN LAB
+// ============================================================
+let feynmanStage = 0;
+let feynmanData = { concept:'', learn:'', explain:'', gaps:'', refined:'' };
+
+const FEYNMAN_CONTENT = [
+  { title:"Step 1: Choose & Learn", placeholder:"What concept are you learning? Write everything you know about it — jargon, details, complexity included. Don't simplify yet.", field:'learn' },
+  { title:"Step 2: Explain Simply", placeholder:"Explain the concept as if to a 12-year-old. Use simple words, an analogy, and a real-life example. Avoid all jargon.", field:'explain' },
+  { title:"Step 3: Find Your Gaps", placeholder:"Where did your explanation fail? What did you have to skip? What words did you stumble on? List every gap honestly.", field:'gaps' },
+  { title:"Step 4: Refine & Compress", placeholder:"Write the final, clearest possible explanation. One sentence that contains the core idea. One analogy. One example. One limitation.", field:'refined' }
+];
+
+function setStage(i, el) {
+  feynmanStage = i;
+  document.querySelectorAll('.fstage').forEach(f => f.classList.remove('active'));
+  el.classList.add('active');
+  renderFeynmanCard();
+}
+
+function renderFeynmanCard() {
+  const s = FEYNMAN_CONTENT[feynmanStage];
+  const el = document.getElementById('feynmanContent');
+  el.innerHTML = `
+    <div class="sec-title" style="margin-bottom:12px">${s.title}</div>
+    <div class="form-group">
+      <label>Concept name</label>
+      <input type="text" id="feynConceptName" placeholder="e.g. Compound Interest, Immune Response..." value="${feynmanData.concept}">
+    </div>
+    <div class="form-group">
+      <label>Your response</label>
+      <textarea style="min-height:160px" id="feynText" placeholder="${s.placeholder}">${feynmanData[s.field]||''}</textarea>
+    </div>
+    <div style="display:flex;gap:8px">
+      ${feynmanStage > 0 ? `<button class="btn btn-outline" onclick="feynmanNav(-1)">← Back</button>` : ''}
+      ${feynmanStage < 3 ? `<button class="btn btn-primary" onclick="feynmanNav(1)">Next Step →</button>` : `<button class="btn btn-accent" onclick="saveFeynman()">Save Compression ✓</button>`}
+    </div>
+  `;
+}
+
+function feynmanNav(dir) {
+  const s = FEYNMAN_CONTENT[feynmanStage];
+  feynmanData.concept = document.getElementById('feynConceptName').value;
+  feynmanData[s.field] = document.getElementById('feynText').value;
+  feynmanStage = Math.max(0, Math.min(3, feynmanStage + dir));
+  document.querySelectorAll('.fstage').forEach((f,i) => f.classList.toggle('active', i===feynmanStage));
+  renderFeynmanCard();
+}
+
+function saveFeynman() {
+  const s = FEYNMAN_CONTENT[feynmanStage];
+  feynmanData.concept = document.getElementById('feynConceptName').value;
+  feynmanData[s.field] = document.getElementById('feynText').value;
+  if (!feynmanData.concept || !feynmanData.refined) { toast('Complete all steps first'); return; }
+  state.feynmanSaved.push({ ...feynmanData, date: new Date().toISOString() });
+  feynmanData = { concept:'', learn:'', explain:'', gaps:'', refined:'' };
+  feynmanStage = 0;
+  saveState();
+  renderFeynman();
+  toast('Feynman compression saved!');
+}
+
+function renderFeynman() {
+  document.querySelectorAll('.fstage').forEach((f,i) => f.classList.toggle('active', i===feynmanStage));
+  renderFeynmanCard();
+  const savedEl = document.getElementById('feynmanSaved');
+  if (!state.feynmanSaved.length) {
+    savedEl.innerHTML = `<div class="empty"><p>No compressions saved yet. Complete all 4 steps to save.</p></div>`;
+  } else {
+    savedEl.innerHTML = state.feynmanSaved.map((f,i) => `
+      <div class="note-card" style="margin-bottom:8px">
+        <div class="note-title">💡 ${f.concept}</div>
+        <div class="note-preview">${f.refined}</div>
+        <div class="note-meta">${new Date(f.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</div>
+      </div>
+    `).join('');
+  }
+}
+
+// ============================================================
+// THINKING TOOLS
+// ============================================================
+let timerInterval = null;
+let timerRemaining = 25 * 60;
+let timerDuration = 25 * 60;
+let timerRunning = false;
+
+function renderTools() {
+  renderPrompts();
+  updateFocusSessions();
+}
+
+function spinTopic() {
+  const all = [...TOPICS.philosophy, ...TOPICS.science, ...TOPICS.society, ...TOPICS.random];
+  const topic = all[Math.floor(Math.random() * all.length)];
+  animateTopic(topic);
+}
+function spinCategory(cat) {
+  const arr = TOPICS[cat] || TOPICS.random;
+  animateTopic(arr[Math.floor(Math.random() * arr.length)]);
+}
+function animateTopic(topic) {
+  const el = document.getElementById('topicDisplay');
+  el.style.opacity = '0';
+  setTimeout(() => {
+    el.textContent = topic;
+    el.style.opacity = '1';
+    el.style.transition = 'opacity 0.3s';
+  }, 200);
+}
+
+function startTimer() {
+  if (timerRunning) {
+    clearInterval(timerInterval);
+    timerRunning = false;
+    document.getElementById('timerStart').textContent = 'Resume Focus';
+    document.getElementById('timerLabel').textContent = 'PAUSED';
+    return;
+  }
+  timerRunning = true;
+  document.getElementById('timerStart').textContent = 'Pause';
+  document.getElementById('timerLabel').textContent = 'FOCUSING · DO NOT DISTURB';
+  timerInterval = setInterval(() => {
+    timerRemaining--;
+    updateTimerDisplay();
+    if (timerRemaining <= 0) {
+      clearInterval(timerInterval);
+      timerRunning = false;
+      state.focusSessions = (state.focusSessions || 0) + 1;
+      saveState();
+      updateFocusSessions();
+      document.getElementById('timerStart').textContent = 'Start Focus';
+      document.getElementById('timerLabel').textContent = 'SESSION COMPLETE ✓';
+      timerRemaining = timerDuration;
+      updateTimerDisplay();
+      toast('Focus session complete! 🧠');
+    }
+  }, 1000);
+}
+
+function resetTimer() {
+  clearInterval(timerInterval);
+  timerRunning = false;
+  timerRemaining = timerDuration;
+  updateTimerDisplay();
+  document.getElementById('timerStart').textContent = 'Start Focus';
+  document.getElementById('timerLabel').textContent = `POMODORO · READY`;
+}
+
+function setTimerDuration(mins) {
+  timerDuration = mins * 60;
+  timerRemaining = timerDuration;
+  resetTimer();
+  document.getElementById('timerLabel').textContent = `${mins} MIN · READY`;
+}
+
+function updateTimerDisplay() {
+  const m = Math.floor(timerRemaining / 60).toString().padStart(2,'0');
+  const s = (timerRemaining % 60).toString().padStart(2,'0');
+  document.getElementById('timerDisplay').textContent = `${m}:${s}`;
+  const pct = (1 - timerRemaining/timerDuration)*100;
+  document.getElementById('timerDisplay').style.background = `conic-gradient(var(--accent2) ${pct}%, transparent 0)`;
+}
+
+function updateFocusSessions() {
+  const el = document.getElementById('focusSessions');
+  if (el) el.textContent = state.focusSessions || 0;
+}
+
+function renderPrompts() {
+  const el = document.getElementById('promptCards');
+  if (!el) return;
+  const shuffled = [...REFLECTION_PROMPTS].sort(() => Math.random() - 0.5).slice(0, 5);
+  el.innerHTML = shuffled.map(p => `
+    <div class="prompt-card" onclick="usePrompt(this,'${p.replace(/'/g,"\\'")}')">
+      <div class="prompt-text">${p}</div>
+    </div>
+  `).join('');
+}
+
+function refreshPrompts() { renderPrompts(); }
+
+function usePrompt(el, prompt) {
+  el.classList.toggle('used');
+  showPage('today');
+  setTimeout(() => {
+    const ref = document.getElementById('reflectionText');
+    if (ref) { ref.value = (ref.value ? ref.value + '\n\n' : '') + prompt + '\n'; ref.focus(); }
+  }, 400);
+}
+
+// ============================================================
+// NOTES
+// ============================================================
+let editingNoteId = null;
+
+function renderNotes() {
+  const el = document.getElementById('notesList');
+  if (!state.notes.length) {
+    el.innerHTML = `<div class="empty"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><p>No notes yet. Click + New Note to start.</p></div>`;
+    return;
+  }
+  const tagEmoji = { insight:'💡', question:'❓', idea:'🌱', breakthrough:'⚡', struggle:'🔧', general:'📝' };
+  el.innerHTML = `<div class="card-grid g2">` + state.notes.map(n => `
+    <div class="note-card" onclick="openEditNote('${n.id}')">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:6px">
+        <div class="note-title">${n.title || 'Untitled'}</div>
+        <span style="font-size:16px;flex-shrink:0">${tagEmoji[n.tag]||'📝'}</span>
+      </div>
+      <div class="note-preview">${n.content}</div>
+      <div class="note-meta" style="display:flex;align-items:center;justify-content:space-between">
+        <span>${new Date(n.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'})}</span>
+        <button onclick="event.stopPropagation();deleteNote('${n.id}')" style="background:none;border:none;cursor:pointer;font-size:11px;color:var(--red)">Delete</button>
+      </div>
+    </div>
+  `).join('') + `</div>`;
+}
+
+function openNewNote() {
+  editingNoteId = null;
+  document.getElementById('noteModalTitle').textContent = 'New Note';
+  document.getElementById('noteTitleInput').value = '';
+  document.getElementById('noteContentInput').value = '';
+  document.getElementById('noteTagInput').value = 'insight';
+  openModal('noteModal');
+}
+function openEditNote(id) {
+  const n = state.notes.find(n => n.id === id);
+  if (!n) return;
+  editingNoteId = id;
+  document.getElementById('noteModalTitle').textContent = 'Edit Note';
+  document.getElementById('noteTitleInput').value = n.title;
+  document.getElementById('noteContentInput').value = n.content;
+  document.getElementById('noteTagInput').value = n.tag;
+  openModal('noteModal');
+}
+function saveNote() {
+  const title = document.getElementById('noteTitleInput').value.trim();
+  const content = document.getElementById('noteContentInput').value.trim();
+  if (!content) { toast('Write something first'); return; }
+  if (editingNoteId) {
+    const idx = state.notes.findIndex(n => n.id === editingNoteId);
+    if (idx > -1) state.notes[idx] = { ...state.notes[idx], title, content, tag: document.getElementById('noteTagInput').value };
+  } else {
+    state.notes.unshift({ id:'n'+Date.now(), title, content, tag: document.getElementById('noteTagInput').value, date: new Date().toISOString() });
+  }
+  saveState(); closeModal('noteModal'); renderNotes();
+  toast(editingNoteId ? 'Note updated' : 'Note saved!');
+}
+function deleteNote(id) {
+  state.notes = state.notes.filter(n => n.id !== id);
+  saveState(); renderNotes();
+}
+
+// ============================================================
+// PROGRESS
+// ============================================================
+function renderProgress() {
+  updateStats();
+  renderTrendChart();
+  renderRadar();
+  renderDimBars('allDimBars');
+  renderRubric();
+  const logs = Object.values(state.logs);
+  const avgs = logs.map(getDayAvg).filter(v=>v>0);
+  if (avgs.length >= 2) {
+    const firstHalf = avgs.slice(0, Math.ceil(avgs.length/2));
+    const secondHalf = avgs.slice(Math.floor(avgs.length/2));
+    const fAvg = firstHalf.reduce((a,b)=>a+b,0)/firstHalf.length;
+    const sAvg = secondHalf.reduce((a,b)=>a+b,0)/secondHalf.length;
+    const growth = ((sAvg - fAvg)/fAvg*100).toFixed(1);
+    document.getElementById('p-growth').textContent = (growth > 0 ? '+' : '') + growth + '%';
+  }
+}
+
+function renderTrendChart() {
+  const el = document.getElementById('trendChart');
+  if (!el) return;
+  const days = Array.from({length:30}, (_,i) => {
+    const log = state.logs[i+1];
+    return log ? getDayAvg(log) : 0;
+  });
+  const maxV = Math.max(...days, 1);
+  el.innerHTML = days.map((v,i) => {
+    const pct = (v / 5) * 100;
+    const color = v === 0 ? 'var(--border)' : v >= 4 ? 'var(--green)' : v >= 3 ? 'var(--accent2)' : v >= 2 ? 'var(--amber)' : 'var(--red)';
+    return `<div class="chart-bar-wrap"><div class="chart-bar" style="height:${pct}%;background:${color};min-height:${v?3:0}px" title="Day ${i+1}: ${v?v.toFixed(1):'—'}"></div></div>`;
+  }).join('');
+}
+
+function renderRadar() {
+  const canvas = document.getElementById('radarCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 260;
+  canvas.width = W;
+  canvas.height = 260;
+  const cx = W/2, cy = 130, r = 100;
+  const n = DIMENSIONS.length;
+  const logs = Object.values(state.logs);
+  const dimAvgs = DIMENSIONS.map(d => {
+    const scores = logs.map(l => l.scores && l.scores[d.key] ? Number(l.scores[d.key]) : 0).filter(v=>v>0);
+    return scores.length ? scores.reduce((a,b)=>a+b,0)/scores.length : 0;
+  });
+  ctx.clearRect(0,0,W,260);
+  // Grid
+  for (let ring = 1; ring <= 5; ring++) {
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const angle = (i/n)*Math.PI*2 - Math.PI/2;
+      const rr = r * (ring/5);
+      const x = cx + Math.cos(angle)*rr, y = cy + Math.sin(angle)*rr;
+      i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.closePath();
+    ctx.strokeStyle = '#E8E6E1'; ctx.lineWidth = 1; ctx.stroke();
+  }
+  // Axes
+  DIMENSIONS.forEach((d,i) => {
+    const angle = (i/n)*Math.PI*2 - Math.PI/2;
+    ctx.beginPath(); ctx.moveTo(cx,cy);
+    ctx.lineTo(cx+Math.cos(angle)*r, cy+Math.sin(angle)*r);
+    ctx.strokeStyle='#D4D1C9'; ctx.lineWidth=1; ctx.stroke();
+    // Label
+    const lx = cx+Math.cos(angle)*(r+20), ly = cy+Math.sin(angle)*(r+18);
+    ctx.fillStyle='#6B6860'; ctx.font='10px DM Sans'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(d.name.split(' ').slice(0,2).join(' '), lx, ly);
+  });
+  // Fill
+  ctx.beginPath();
+  DIMENSIONS.forEach((d,i) => {
+    const angle = (i/n)*Math.PI*2 - Math.PI/2;
+    const rr = r * (dimAvgs[i]/5);
+    const x = cx+Math.cos(angle)*rr, y = cy+Math.sin(angle)*rr;
+    i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+  });
+  ctx.closePath();
+  ctx.fillStyle='rgba(99,102,241,0.15)'; ctx.fill();
+  ctx.strokeStyle='#6366F1'; ctx.lineWidth=2; ctx.stroke();
+}
+
+function renderRubric() {
+  const el = document.getElementById('rubricCards');
+  if (!el) return;
+  el.innerHTML = RUBRIC.map(r => `
+    <div class="card" style="margin-bottom:10px">
+      <div class="collapsible-header" onclick="toggleCollapse(this)">
+        <div style="font-size:14px;font-weight:500">${r.title}</div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="collapsible-body">
+        <div style="height:10px"></div>
+        ${r.scores.map(s => `
+          <div class="rubric-row" style="display:grid;grid-template-columns:90px 1fr;gap:6px 12px;margin-bottom:8px;align-items:start">
+            <span class="badge ${s.s<=1?'badge-red':s.s===2?'badge-amber':s.s===3?'badge-blue':s.s===4?'badge-green':'badge-green'}" style="justify-content:flex-start">${s.s} — ${s.label}</span>
+            <span style="font-size:12.5px;color:var(--text2);line-height:1.6">${s.desc}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+// ============================================================
+// QUOTES
+// ============================================================
+function updateQuote() {
+  const q = QUOTES[state.quoteIndex % QUOTES.length];
+  const el = document.getElementById('quoteText');
+  const au = document.getElementById('quoteAuthor');
+  if (el) el.textContent = q.text;
+  if (au) au.textContent = '— ' + q.author;
+}
+function nextQuote() {
+  state.quoteIndex = (state.quoteIndex + 1) % QUOTES.length;
+  saveState();
+  updateQuote();
+}
+
+// ============================================================
+// CLOCK / GREETING
+// ============================================================
+function updateClock() {
+  const now = new Date();
+  const h = now.getHours();
+  const greeting = h < 12 ? 'morning' : h < 17 ? 'afternoon' : 'evening';
+  document.getElementById('timeGreeting').textContent = greeting;
+  document.getElementById('liveClock').textContent = now.toLocaleTimeString('en-GB', {hour:'2-digit',minute:'2-digit'});
+}
+
+// ============================================================
+// TASK TIMER — full page timer
+// ============================================================
+const QUICK_TIMERS = [
+  { icon:'✍️', name:'Timed Essay Sprint', dur:25*60, label:'25 min writing' },
+  { icon:'📹', name:'Camera Talk', dur:5*60, label:'5 min talk' },
+  { icon:'⚡', name:'Impromptu Argument', dur:15*60, label:'15 min — read 5, write 10' },
+  { icon:'📖', name:'Close Reading', dur:30*60, label:'30 min focused reading' },
+  { icon:'🧠', name:'Memory Recall Wait', dur:30*60, label:'30 min between read & recall' },
+  { icon:'🔥', name:'Pressure Essay', dur:30*60, label:'30 min hard deadline' },
+  { icon:'💬', name:'Socratic Dialogue', dur:20*60, label:'20 min self-debate' },
+  { icon:'🎯', name:'Deep Work Block', dur:90*60, label:'90 min no interruptions' },
+  { icon:'🧩', name:'Feynman Compression', dur:5*60, label:'5 min — explain simply' },
+  { icon:'🔍', name:'Thinking Journal', dur:10*60, label:'10 min reflection' },
+];
+
+let tt = {
+  mode: 'countdown',       // 'countdown' | 'stopwatch' | 'interval'
+  state: 'idle',           // 'idle' | 'running' | 'paused' | 'done'
+  elapsed: 0,              // ms elapsed (stopwatch) or ms remaining (countdown)
+  target: 5 * 60 * 1000,  // countdown/interval target in ms
+  startedAt: null,         // Date.now() when last started
+  lapStartedAt: null,      // for lap splits
+  laps: [],                // [{num, total, split}]
+  interval: null,          // setInterval handle
+  // interval mode
+  intWork: 25, intBreak: 5, intRounds: 4,
+  intCurrentRound: 1, intPhase: 'work', // 'work'|'break'
+  // sessions
+  sessions: [],
+};
+
+function fmtMs(ms, showMs = false) {
+  const totalSec = Math.max(0, Math.floor(ms / 1000));
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  if (h > 0) return `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+
+function setTimerMode(mode) {
+  if (tt.state === 'running' || tt.state === 'paused') ttReset();
+  tt.mode = mode;
+  document.querySelectorAll('.tt-mode-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('mode' + mode.charAt(0).toUpperCase() + mode.slice(1))?.classList.add('active');
+
+  const presets = document.getElementById('countdownPresets');
+  const customWrap = document.getElementById('customInputWrap');
+  const intSettings = document.getElementById('intervalSettings');
+
+  if (mode === 'countdown') {
+    presets.style.display = 'flex';
+    customWrap.style.display = 'flex';
+    intSettings.style.display = 'none';
+    tt.target = 5 * 60 * 1000;
+  } else if (mode === 'stopwatch') {
+    presets.style.display = 'none';
+    customWrap.style.display = 'none';
+    intSettings.style.display = 'none';
+    tt.elapsed = 0;
+  } else if (mode === 'interval') {
+    presets.style.display = 'none';
+    customWrap.style.display = 'none';
+    intSettings.style.display = 'block';
+  }
+  ttUpdateDisplay();
+  ttUpdateRing();
+  document.getElementById('ttLapBtn').style.display = mode === 'stopwatch' ? 'inline-flex' : 'none';
+}
+
+function selectPreset(btn, secs) {
+  document.querySelectorAll('.tt-preset').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  tt.target = secs * 1000;
+  tt.elapsed = 0;
+  if (tt.state !== 'running') ttUpdateDisplay();
+  ttUpdateRing();
+}
+
+function applyCustomTime() {
+  const m = parseInt(document.getElementById('customMin').value) || 0;
+  const s = parseInt(document.getElementById('customSec').value) || 0;
+  const total = (m * 60 + s) * 1000;
+  if (total <= 0) return;
+  tt.target = total;
+  tt.elapsed = 0;
+  document.querySelectorAll('.tt-preset').forEach(b => b.classList.remove('active'));
+  if (tt.state !== 'running') ttUpdateDisplay();
+  ttUpdateRing();
+}
+
+function ttStart() {
+  if (tt.state === 'done') ttReset();
+  if (tt.mode === 'interval') {
+    tt.intWork = (parseInt(document.getElementById('intWork').value) || 25);
+    tt.intBreak = (parseInt(document.getElementById('intBreak').value) || 5);
+    tt.intRounds = (parseInt(document.getElementById('intRounds').value) || 4);
+    tt.intCurrentRound = 1;
+    tt.intPhase = 'work';
+    tt.target = tt.intWork * 60 * 1000;
+    tt.elapsed = 0;
+    updateIntervalIndicator();
+  }
+  tt.startedAt = Date.now() - (tt.elapsed || 0);
+  tt.lapStartedAt = tt.lapStartedAt || Date.now();
+  tt.state = 'running';
+  document.getElementById('ttStartBtn').style.display = 'none';
+  document.getElementById('ttPauseBtn').style.display = 'inline-flex';
+  document.getElementById('ttLabel').textContent = tt.mode === 'interval'
+    ? (tt.intPhase === 'work' ? 'WORK PHASE' : 'BREAK PHASE')
+    : tt.mode === 'stopwatch' ? 'RUNNING' : 'COUNTING DOWN';
+  document.getElementById('ttLabel').classList.remove('tt-pulsing');
+
+  clearInterval(tt.interval);
+  tt.interval = setInterval(ttTick, 50);
+}
+
+function ttPause() {
+  if (tt.state !== 'running') return;
+  clearInterval(tt.interval);
+  tt.state = 'paused';
+  tt.elapsed = tt.mode === 'stopwatch' ? Date.now() - tt.startedAt : tt.target - (Date.now() - tt.startedAt);
+  document.getElementById('ttStartBtn').style.display = 'inline-flex';
+  document.getElementById('ttStartBtn').innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Resume`;
+  document.getElementById('ttPauseBtn').style.display = 'none';
+  document.getElementById('ttLabel').textContent = 'PAUSED';
+  document.getElementById('ttLabel').classList.add('tt-pulsing');
+}
+
+function ttReset() {
+  clearInterval(tt.interval);
+  tt.state = 'idle';
+  tt.elapsed = 0;
+  tt.startedAt = null;
+  tt.lapStartedAt = null;
+  tt.laps = [];
+  tt.intCurrentRound = 1;
+  tt.intPhase = 'work';
+  document.getElementById('ttStartBtn').style.display = 'inline-flex';
+  document.getElementById('ttStartBtn').innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> Start`;
+  document.getElementById('ttPauseBtn').style.display = 'none';
+  document.getElementById('ttLabel').textContent = 'READY';
+  document.getElementById('ttLabel').classList.remove('tt-pulsing');
+  const arc = document.getElementById('timerArc');
+  arc.classList.remove('tt-ring-warning', 'tt-ring-danger');
+  ttUpdateDisplay();
+  ttUpdateRing();
+  renderLaps();
+}
+
+function ttLap() {
+  if (tt.state !== 'running' || tt.mode !== 'stopwatch') return;
+  const now = Date.now();
+  const total = now - tt.startedAt;
+  const split = tt.laps.length === 0 ? total : total - tt.laps[tt.laps.length - 1].total;
+  tt.laps.push({ num: tt.laps.length + 1, total, split });
+  renderLaps();
+}
+
+function clearLaps() { tt.laps = []; renderLaps(); }
+
+function ttTick() {
+  const now = Date.now();
+  if (tt.mode === 'stopwatch') {
+    tt.elapsed = now - tt.startedAt;
+    ttUpdateDisplay();
+    ttUpdateRing();
+  } else if (tt.mode === 'countdown') {
+    const remaining = tt.target - (now - tt.startedAt);
+    tt.elapsed = remaining;
+    if (remaining <= 0) {
+      ttDone();
+      return;
+    }
+    ttUpdateDisplay();
+    ttUpdateRing();
+    // colour warnings
+    const arc = document.getElementById('timerArc');
+    const pct = remaining / tt.target;
+    arc.classList.toggle('tt-ring-warning', pct <= 0.25 && pct > 0.1);
+    arc.classList.toggle('tt-ring-danger', pct <= 0.1);
+  } else if (tt.mode === 'interval') {
+    const remaining = tt.target - (now - tt.startedAt);
+    tt.elapsed = remaining;
+    if (remaining <= 0) {
+      // switch phase
+      if (tt.intPhase === 'work') {
+        tt.intPhase = 'break';
+        tt.target = tt.intBreak * 60 * 1000;
+        document.getElementById('ttLabel').textContent = 'BREAK PHASE ☕';
+      } else {
+        tt.intCurrentRound++;
+        if (tt.intCurrentRound > tt.intRounds) { ttDone(); return; }
+        tt.intPhase = 'work';
+        tt.target = tt.intWork * 60 * 1000;
+        document.getElementById('ttLabel').textContent = 'WORK PHASE 🔥';
+      }
+      tt.startedAt = Date.now();
+      updateIntervalIndicator();
+      toast(tt.intPhase === 'break' ? '☕ Break time!' : '🔥 Back to work!');
+    }
+    ttUpdateDisplay();
+    ttUpdateRing();
+  }
+}
+
+function ttDone() {
+  clearInterval(tt.interval);
+  tt.state = 'done';
+  const label = document.getElementById('ttTaskLabel').value.trim() || 'Untimed session';
+  const dur = tt.mode === 'stopwatch' ? tt.elapsed : tt.target;
+  tt.sessions.unshift({ label, dur, date: new Date().toISOString(), mode: tt.mode });
+  state.timerSessions = tt.sessions;
+  saveState();
+  document.getElementById('ttLabel').textContent = '✓ COMPLETE';
+  document.getElementById('ttLabel').classList.add('tt-pulsing');
+  document.getElementById('ttStartBtn').style.display = 'inline-flex';
+  document.getElementById('ttStartBtn').innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg> New Session`;
+  document.getElementById('ttPauseBtn').style.display = 'none';
+  const arc = document.getElementById('timerArc');
+  arc.classList.remove('tt-ring-warning', 'tt-ring-danger');
+  arc.setAttribute('stroke', 'var(--green)');
+  renderSessionHistory();
+  toast(tt.mode === 'interval' ? `All ${tt.intRounds} rounds complete! 🏆` : 'Timer complete! 🎯');
+  try { new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAA').play(); } catch(e){}
+}
+
+function ttUpdateDisplay() {
+  let ms;
+  if (tt.mode === 'stopwatch') {
+    ms = tt.state === 'idle' ? 0 : tt.elapsed;
+  } else {
+    ms = tt.state === 'idle' ? tt.target : (tt.elapsed >= 0 ? tt.elapsed : 0);
+  }
+  document.getElementById('ttDisplay').textContent = fmtMs(ms);
+}
+
+function ttUpdateRing() {
+  const arc = document.getElementById('timerArc');
+  const circumference = 603; // 2 * PI * 96
+  let offset;
+  if (tt.mode === 'stopwatch') {
+    const max = 60 * 60 * 1000; // 1 hour visual max
+    const pct = Math.min(tt.elapsed / max, 1);
+    offset = circumference * (1 - pct);
+  } else {
+    const remaining = tt.state === 'idle' ? tt.target : Math.max(0, tt.elapsed);
+    const pct = tt.target > 0 ? remaining / tt.target : 0;
+    offset = circumference * pct;
+  }
+  arc.setAttribute('stroke-dashoffset', offset.toFixed(1));
+  if (!arc.classList.contains('tt-ring-warning') && !arc.classList.contains('tt-ring-danger')) {
+    arc.setAttribute('stroke', 'var(--accent2)');
+  }
+}
+
+function updateIntervalIndicator() {
+  document.getElementById('intCurrentRound').textContent = tt.intCurrentRound;
+  document.getElementById('intTotalRounds').textContent = tt.intRounds;
+  document.getElementById('intPhaseName').textContent = tt.intPhase === 'work' ? 'Work' : 'Break';
+  document.getElementById('intPhaseName').style.color = tt.intPhase === 'work' ? 'var(--accent2)' : 'var(--green)';
+}
+
+function renderLaps() {
+  const el = document.getElementById('lapList');
+  if (!tt.laps.length) {
+    el.innerHTML = `<div class="empty" style="padding:20px 0"><p style="font-size:12px">No laps yet. Press the lap button during a session.</p></div>`;
+    return;
+  }
+  const splits = tt.laps.map(l => l.split);
+  const bestSplit = Math.min(...splits);
+  const worstSplit = Math.max(...splits);
+  el.innerHTML = [...tt.laps].reverse().map(l => {
+    const isBest = tt.laps.length > 1 && l.split === bestSplit;
+    const isWorst = tt.laps.length > 1 && l.split === worstSplit;
+    return `<div class="lap-row${isBest?' lap-best':isWorst?' lap-worst':''}">
+      <span class="lap-num">Lap ${l.num}</span>
+      <span class="lap-time">${fmtMs(l.total)}</span>
+      <span class="lap-split">${isBest ? '🟢 ' : isWorst ? '🔴 ' : ''}+${fmtMs(l.split)}</span>
+    </div>`;
+  }).join('');
+}
+
+function renderSessionHistory() {
+  const el = document.getElementById('sessionList');
+  const sessions = tt.sessions;
+  if (!sessions.length) {
+    el.innerHTML = `<div class="empty" style="padding:20px 0"><p style="font-size:12px">Completed sessions appear here.</p></div>`;
+    return;
+  }
+  el.innerHTML = sessions.slice(0, 20).map(s => `
+    <div class="session-row">
+      <div style="flex:1;min-width:0">
+        <div class="session-label">${s.label}</div>
+        <div class="session-meta">${new Date(s.date).toLocaleDateString('en-GB',{day:'numeric',month:'short'})} · ${s.mode}</div>
+      </div>
+      <div class="session-dur">${fmtMs(s.dur)}</div>
+    </div>
+  `).join('');
+}
+
+function clearSessions() {
+  tt.sessions = [];
+  state.timerSessions = [];
+  saveState();
+  renderSessionHistory();
+}
+
+function renderQuickTimers() {
+  const el = document.getElementById('quickTimerGrid');
+  if (!el) return;
+  el.innerHTML = QUICK_TIMERS.map((qt, i) => `
+    <div class="qt-card" onclick="loadQuickTimer(${i})">
+      <div class="qt-icon">${qt.icon}</div>
+      <div>
+        <div class="qt-name">${qt.name}</div>
+        <div class="qt-dur">${qt.label}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function loadQuickTimer(idx) {
+  const qt = QUICK_TIMERS[idx];
+  if (tt.state === 'running') ttReset();
+  setTimerMode('countdown');
+  tt.target = qt.dur;
+  tt.elapsed = 0;
+  document.getElementById('ttTaskLabel').value = qt.name;
+  document.querySelectorAll('.tt-preset').forEach(b => b.classList.remove('active'));
+  ttUpdateDisplay();
+  ttUpdateRing();
+  toast(`Loaded: ${qt.name} — ${fmtMs(qt.dur)}`);
+  // scroll up to timer
+  document.getElementById('page-timer').scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderTimerPage() {
+  tt.sessions = state.timerSessions || [];
+  renderSessionHistory();
+  renderLaps();
+  renderQuickTimers();
+  // init display
+  ttUpdateDisplay();
+  ttUpdateRing();
+  // hide lap btn for non-stopwatch
+  document.getElementById('ttLapBtn').style.display = tt.mode === 'stopwatch' ? 'inline-flex' : 'none';
+}
+
+// ============================================================
+// INIT
+// ============================================================
+function init() {
+  loadState();
+  updateClock();
+  setInterval(updateClock, 30000);
+  renderDashboard();
+  renderAllDays();
+
+  // Close modals on overlay click
+  document.querySelectorAll('.modal-overlay').forEach(m => {
+    m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+  });
+}
+
+window.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
